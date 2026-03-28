@@ -111,6 +111,10 @@ a:focus-visible {
     overflow-x: auto;
 }
 
+.header-call-button {
+    width: 100%;
+}
+
 .nav-list,
 .footer-nav-list,
 .feature-list,
@@ -181,6 +185,14 @@ a:focus-visible {
     margin-top: 1.5rem;
 }
 
+.hero-benefits {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.35rem;
+    color: var(--text-muted);
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -230,9 +242,89 @@ a:focus-visible {
     padding: 1.5rem;
 }
 
+.hero-card h2 {
+    margin: 0;
+}
+
+.hero-form {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.hero-form label {
+    font-weight: 700;
+}
+
+.hero-form input,
+.hero-form select,
+.hero-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+}
+
+.hero-form textarea {
+    resize: vertical;
+    min-height: 6.5rem;
+}
+
+.hero-form input:focus-visible,
+.hero-form select:focus-visible,
+.hero-form textarea:focus-visible {
+    outline: 2px solid rgba(180, 87, 45, 0.35);
+    outline-offset: 1px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;
+    flex: 0 0 auto;
+}
+
+.button-full {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
 .service-card,
 .contact-card {
     padding: 1.25rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-card h3 {
+    margin: 0;
+    line-height: 1.25;
+}
+
+.service-card p {
+    margin: 0;
+    color: var(--text-muted);
 }
 
 .section-heading {
@@ -271,6 +363,35 @@ a:focus-visible {
     min-height: calc(100vh - 10rem);
 }
 
+.cta-section {
+    padding: 1rem 0 3rem;
+}
+
+.cta-box {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(255, 250, 243, 0.92);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.cta-box h2,
+.cta-box p {
+    margin-top: 0;
+}
+
+.cta-box p {
+    margin-bottom: 0;
+    color: var(--text-muted);
+}
+
+.cta-box .hero-actions {
+    margin-top: 0;
+}
+
 .site-footer {
     border-top: 1px solid rgba(95, 85, 76, 0.12);
     background: rgba(255, 250, 243, 0.92);
@@ -291,17 +412,33 @@ a:focus-visible {
         justify-content: space-between;
     }
 
+    .header-call-button {
+        width: auto;
+        white-space: nowrap;
+    }
+
     .hero-grid,
     .two-column-layout {
-        grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 1fr);
+        grid-template-columns: minmax(0, 1.5fr) minmax(19rem, 1fr);
         align-items: start;
     }
 
     .service-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .contact-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cta-box {
+        grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 68rem) {
+    .service-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }

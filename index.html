@@ -1,114 +1,166 @@
-<!doctype html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hausgeraete Service Berlin | Reparatur von Waschmaschine, Trockner und mehr</title>
-    <meta name="description" content="Lokaler Hausgeraete-Service in Berlin: schnelle Reparatur von Waschmaschinen, Trocknern, Geschirrspuelern, Herden und Kuehlschraenken.">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body data-page="index">
-    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="brand-block">
-                <p class="brand-kicker">Berlin vor Ort</p>
-                <a class="site-brand" href="index.html">Hausgeraete Service Berlin</a>
-            </div>
-            <nav class="site-nav" aria-label="Hauptnavigation">
-                <ul class="nav-list">
-                    <li><a class="nav-link" href="index.html">Start</a></li>
-                    <li><a class="nav-link" href="contact.html">Kontakt</a></li>
-                    <li><a class="nav-link" href="impressum.html">Impressum</a></li>
-                    <li><a class="nav-link" href="datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<main id="main-content">
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <p class="section-kicker">Reparaturservice fuer Haushaltsgeraete in Berlin</p>
+                <h1>Hausgeraet kaputt? Schnelle Reparatur in Berlin fuer Waschmaschine, Geschirrspueler, Trockner und Herd</h1>
+                <p class="hero-text">
+                    Ihr Haushaltsgeraet funktioniert nicht mehr? Wir helfen bei typischen Defekten schnell und unkompliziert in Berlin.
+                    Rufen Sie uns direkt an oder senden Sie Ihre Anfrage online - wir melden uns schnell zur Terminabstimmung.
+                </p>
 
-    <main id="main-content">
-        <section class="hero-section">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="section-kicker">Reparatur statt Neukauf</p>
-                    <h1>Schnelle Hilfe fuer defekte Hausgeraete in Berlin</h1>
-                    <p class="hero-text">Wir reparieren Waschmaschinen, Geschirrspueler, Trockner, Herde und Kuehlschraenke in Berlin und Umgebung. Transparent, termintreu und mit Fokus auf langlebige Loesungen.</p>
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="contact.html">Termin anfragen</a>
-                        <a class="button button-secondary" href="tel:+493012345678">030 12345678</a>
-                    </div>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="tel:+493012345678">Jetzt anrufen</a>
+                    <a class="button button-secondary" href="#anfrage-formular">Termin anfragen</a>
                 </div>
-                <aside class="hero-card" aria-label="Service-Highlights">
-                    <h2>Schnell auf einen Blick</h2>
-                    <ul class="feature-list">
-                        <li>Vor-Ort-Service in ganz Berlin</li>
-                        <li>Termine oft am selben oder naechsten Werktag</li>
-                        <li>Faire Fehlerdiagnose mit klarer Kostenabsprache</li>
-                    </ul>
-                </aside>
-            </div>
-        </section>
 
-        <section class="info-section">
-            <div class="container">
+                <ul class="hero-benefits">
+                    <li>Vor-Ort-Service in Berlin</li>
+                    <li>Kurzfristige Termine je nach Verfuegbarkeit</li>
+                    <li>Transparente Absprache vor Beginn</li>
+                </ul>
+            </div>
+
+            <aside class="hero-card" id="anfrage-formular" aria-label="Termin anfragen">
+                <h2>Jetzt Rueckruf oder Termin anfragen</h2>
+                <p>Unverbindliche Anfrage in unter einer Minute.</p>
+
+                <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="homepage-contact">
+
+                    <p hidden>
+                        <label>Bitte nicht ausfuellen: <input name="bot-field"></label>
+                    </p>
+
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+
+                    <label for="phone">Telefon</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+
+                    <label for="appliance">Geraet</label>
+                    <select id="appliance" name="appliance" required>
+                        <option value="">Bitte waehlen</option>
+                        <option value="waschmaschine">Waschmaschine</option>
+                        <option value="geschirrspueler">Geschirrspueler</option>
+                        <option value="trockner">Trockner</option>
+                        <option value="herd-ofen">Herd / Ofen</option>
+                    </select>
+
+                    <label for="problem">Problem</label>
+                    <textarea id="problem" name="problem" rows="4" placeholder="Beschreiben Sie kurz den Defekt"></textarea>
+
+                    <label for="area">Bezirk oder Postleitzahl</label>
+                    <input id="area" name="area" type="text" autocomplete="postal-code">
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy-consent" required>
+                        Ich habe die <a href="datenschutz.html">Datenschutzerklaerung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+                    </label>
+
+                    <button class="button button-primary button-full" type="submit">Rueckruf anfragen</button>
+                </form>
+            </aside>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="section-kicker">Unsere Leistungen</p>
+                <h2>Reparatur fuer Waschmaschine, Geschirrspueler, Trockner und Ofen in Berlin</h2>
+            </div>
+
+            <div class="service-grid">
+                <article class="service-card">
+                    <h3>Waschmaschinen Reparatur</h3>
+                    <p>Hilfe bei typischen Defekten wie Wasser bleibt stehen, Maschine schleudert nicht, Trommel dreht nicht oder die Tuere schliesst nicht richtig.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Geschirrspueler Reparatur</h3>
+                    <p>Wenn der Geschirrspueler nicht richtig reinigt, nicht abpumpt, Wasser zieht oder undicht ist.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Trockner Reparatur</h3>
+                    <p>Bei Problemen wie keine Waerme, lange Trockenzeiten, Fehlermeldungen oder Stoerungen an Trommel und Sensoren.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Herd und Ofen Reparatur</h3>
+                    <p>Reparatur bei Heizproblemen, defekten Platten, Backofen ohne Hitze, Schalterfehlern oder Stoerungen am Kochfeld.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section info-section-muted">
+        <div class="container">
+            <div class="section-heading">
+                <p class="section-kicker">Warum wir</p>
+                <h2>Darum entscheiden sich Kunden in Berlin fuer unseren Reparaturservice</h2>
+            </div>
+
+            <div class="service-grid">
+                <article class="service-card">
+                    <h3>Schnelle Erreichbarkeit</h3>
+                    <p>Sie koennen direkt anrufen oder online anfragen. Wir melden uns schnell zur weiteren Abstimmung.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Vor-Ort-Service in Berlin</h3>
+                    <p>Der Defekt wird direkt bei Ihnen vor Ort geprueft, ohne dass Sie das Geraet transportieren muessen.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Transparente Absprache</h3>
+                    <p>Sie erhalten eine verstaendliche Einschaetzung zum Problem und zum weiteren Vorgehen.</p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Reparatur nur wenn sinnvoll</h3>
+                    <p>Wenn eine Reparatur wirtschaftlich keinen Sinn macht, wird das offen kommuniziert.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section info-section-muted">
+        <div class="container two-column-layout">
+            <div>
                 <div class="section-heading">
-                    <p class="section-kicker">Leistungen</p>
-                    <h2>Reparaturen fuer gaengige Haushaltsgeraete</h2>
+                    <p class="section-kicker">Ablauf</p>
+                    <h2>So laeuft Ihre Anfrage ab</h2>
                 </div>
-                <div class="service-grid">
-                    <article class="service-card">
-                        <h3>Waschmaschinen</h3>
-                        <p>Probleme mit Wasserzulauf, Abpumpen, Trommel oder Elektronik analysieren und beheben wir direkt vor Ort.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3>Geschirrspueler</h3>
-                        <p>Wenn Ihr Geraet nicht richtig reinigt, Wasser verliert oder Fehlercodes anzeigt, pruefen wir die Ursache systematisch.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3>Trockner und Herde</h3>
-                        <p>Wir kuemmern uns um Heizungsprobleme, Sensorfehler, Tuerschloesser und typische Verschleissreparaturen.</p>
-                    </article>
-                </div>
+                <ol class="process-list">
+                    <li>Sie rufen uns an oder senden Ihre Anfrage ueber das Formular.</li>
+                    <li>Wir stimmen einen passenden Termin in Berlin mit Ihnen ab.</li>
+                    <li>Sie erhalten eine klare Einschaetzung zum Defekt und zum weiteren Vorgehen.</li>
+                </ol>
             </div>
-        </section>
 
-        <section class="info-section info-section-muted">
-            <div class="container two-column-layout">
-                <div>
-                    <div class="section-heading">
-                        <p class="section-kicker">Einsatzgebiet</p>
-                        <h2>Vor Ort in vielen Berliner Bezirken</h2>
-                    </div>
-                    <p>Unser mobiler Reparaturservice ist unter anderem in Mitte, Prenzlauer Berg, Friedrichshain, Kreuzberg, Neukoelln, Charlottenburg, Schoeneberg, Tempelhof und Pankow im Einsatz.</p>
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Einsatzgebiet</p>
+                    <h2>Unser Reparaturservice in Berlin</h2>
                 </div>
-                <div>
-                    <div class="section-heading">
-                        <p class="section-kicker">Ablauf</p>
-                        <h2>So funktioniert die Terminvergabe</h2>
-                    </div>
-                    <ol class="process-list">
-                        <li>Sie schildern den Defekt telefonisch oder per E-Mail.</li>
-                        <li>Wir vereinbaren einen passenden Termin in Berlin.</li>
-                        <li>Nach der Diagnose erhalten Sie eine klare Einschaetzung zu Aufwand und Kosten.</li>
-                    </ol>
-                </div>
+                <p>Wir sind in vielen Berliner Bezirken unterwegs, darunter Mitte, Prenzlauer Berg, Friedrichshain, Kreuzberg, Neukoelln, Charlottenburg, Schoeneberg, Tempelhof und Pankow. Fragen Sie Ihren Bezirk einfach direkt telefonisch oder ueber das Formular an.</p>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>© <span data-current-year></span> Hausgeraete Service Berlin</p>
-            <nav aria-label="Footer-Navigation">
-                <ul class="footer-nav-list">
-                    <li><a href="contact.html">Kontakt</a></li>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </nav>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/main.js" defer></script>
-</body>
-</html>
+    <section class="cta-section">
+        <div class="container cta-box">
+            <div>
+                <p class="section-kicker">Jetzt Hilfe anfragen</p>
+                <h2>Jetzt Reparaturservice in Berlin anfragen</h2>
+                <p>Rufen Sie uns an oder senden Sie Ihre Anfrage online. Wir melden uns schnell zur Terminabstimmung.</p>
+            </div>
+            <div class="hero-actions">
+                <a class="button button-primary" href="tel:+493012345678">Jetzt anrufen</a>
+                <a class="button button-secondary" href="contact.html">Kontakt aufnehmen</a>
+            </div>
+        </div>
+    </section>
+</main>
