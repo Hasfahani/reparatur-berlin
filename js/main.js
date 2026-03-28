@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const targetPage = linkTarget.replace(".html", "");
-        if (targetPage === currentPage) {
+        const targetPage = linkTarget.replace(".html", "").replace(/-(?:de|en)$/, "");
+        const normalizedCurrent = currentPage ? currentPage.replace(/-(?:de|en)$/, "") : "";
+        if (targetPage === currentPage || targetPage === normalizedCurrent) {
             link.setAttribute("aria-current", "page");
         }
     });
