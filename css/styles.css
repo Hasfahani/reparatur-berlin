@@ -163,6 +163,26 @@ textarea {
     text-decoration: none;
     color: var(--text-muted);
     font-weight: 500;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
 }
 
 .nav-link:hover,
@@ -181,8 +201,9 @@ textarea {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.35rem;
     min-height: 2rem;
-    padding: 0.25rem 0.6rem;
+    padding: 0.25rem 0.7rem 0.25rem 0.5rem;
     border: 1px solid var(--border);
     border-radius: 999px;
     text-decoration: none;
@@ -190,7 +211,7 @@ textarea {
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--text-muted);
-    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .lang-switch:hover,
@@ -198,6 +219,15 @@ textarea {
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(180, 87, 45, 0.25);
+}
+
+.flag-icon {
+    width: 1.15rem;
+    height: auto;
+    border-radius: 2px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
 }
 
 .header-call-button {
@@ -296,6 +326,13 @@ textarea {
     border: 1px solid rgba(220, 203, 181, 0.95);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover,
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 48px rgba(60, 36, 20, 0.12);
 }
 
 .hero-card,
@@ -525,18 +562,61 @@ textarea {
 .site-footer {
     border-top: 1px solid rgba(95, 85, 76, 0.12);
     background: rgba(255, 250, 243, 0.92);
+    margin-top: 1rem;
 }
 
 .footer-inner {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    padding: 1.25rem 0 2rem;
+    padding: 1.5rem 0 2rem;
 }
 
 .footer-inner p {
     margin: 0;
+    font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+.footer-nav-list a {
+    font-size: 0.8rem;
+    min-height: 1.5rem;
+}
+
+/* WhatsApp floating button */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    animation: wa-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float svg {
+    width: 1.85rem;
+    height: 1.85rem;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+    animation: none;
+}
+
+@keyframes wa-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
 }
 
 /* Utility */
