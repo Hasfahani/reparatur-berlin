@@ -1,8 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ============================================================
+         SEO META TAGS — Manuell ändern bei Namens- / Domainwechsel
+         ============================================================ -->
     <title>Hausgeräte Reparatur Berlin | Waschmaschine, Geschirrspüler, Trockner & Herd</title>
     <meta name="description" content="Ihr Hausgerät ist defekt? Wir reparieren Waschmaschinen, Geschirrspüler, Trockner und Herde direkt bei Ihnen in Berlin. Jetzt Termin anfragen.">
     <link rel="canonical" href="https://www.YOURDOMAIN.de/index-de.html">
@@ -13,50 +17,33 @@
     <meta property="og:site_name" content="Hausgeräte Service Berlin">
     <meta property="og:title" content="Hausgeräte Reparatur Berlin | Waschmaschine, Geschirrspüler, Trockner & Herd">
     <meta property="og:description" content="Hausgeräte-Reparatur direkt bei Ihnen zu Hause in Berlin. Waschmaschine, Geschirrspüler, Trockner und Herd – schnell und zuverlässig.">
-    <meta property="og:url" content="https://www.YOURDOMAIN.de/index-de.html">
+    <meta property="og:url" content="https://www.YOURDOMAIN.de/index.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Hausgeräte Reparatur Berlin | Waschmaschine, Geschirrspüler, Trockner & Herd">
     <meta name="twitter:description" content="Hausgeräte-Reparatur direkt bei Ihnen zu Hause in Berlin. Waschmaschine, Geschirrspüler, Trockner und Herd – schnell und zuverlässig.">
+
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts & Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Hausgeräte Service Berlin",
-        "description": "Hausgeräte-Reparatur in Berlin. Waschmaschine, Geschirrspüler, Trockner und Herd – direkt bei Ihnen vor Ort.",
-        "url": "https://www.YOURDOMAIN.de",
-        "telephone": "+493012345678",
-        "areaServed": {
-            "@type": "City",
-            "name": "Berlin"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Berlin",
-            "addressCountry": "DE"
-        },
-        "serviceType": [
-            "Waschmaschinenreparatur",
-            "Geschirrspülerreparatur",
-            "Trocknerreparatur",
-            "Herd- und Ofenreparatur"
-        ]
-    }
-    </script>
+
+    <!-- JSON-LD wird dynamisch von main.js erzeugt -->
 </head>
 <body data-page="index-de">
     <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+    <!-- ==================== HEADER ==================== -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-block">
-                <p class="brand-kicker">Berlin vor Ort</p>
-                <a class="site-brand" href="index-de.html">Hausgeräte Service Berlin</a>
+                <p class="brand-kicker" data-cfg="tagline">Berlin vor Ort</p>
+                <a class="site-brand" href="index-de.html" data-cfg="businessName">Hausgeräte Service Berlin</a>
             </div>
             <button class="menu-toggle" aria-expanded="false" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
             <nav class="site-nav" aria-label="Hauptnavigation">
@@ -70,6 +57,8 @@
     </header>
 
     <main id="main-content">
+
+    <!-- ==================== HERO ==================== -->
     <section class="hero-section">
         <div class="container hero-grid">
             <div class="hero-copy">
@@ -79,12 +68,10 @@
                     Ob Waschmaschine, Geschirrspüler, Trockner oder Herd: Wir kommen zu Ihnen nach Hause,
                     prüfen den Defekt und reparieren vor Ort. Rufen Sie uns an oder stellen Sie eine kurze Anfrage.
                 </p>
-
                 <div class="hero-actions">
-                    <a class="button button-primary" href="tel:+493012345678">Jetzt anrufen</a>
+                    <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">Jetzt anrufen</a>
                     <a class="button button-secondary" href="#anfrage-formular">Anfrage stellen</a>
                 </div>
-
                 <ul class="hero-benefits">
                     <li>Reparatur direkt bei Ihnen zu Hause</li>
                     <li>Termine oft innerhalb weniger Tage</li>
@@ -92,43 +79,35 @@
                 </ul>
             </div>
 
+            <!-- ==================== CONTACT FORM ==================== -->
             <aside class="hero-card" id="anfrage-formular" aria-label="Termin anfragen">
                 <h2>Rückruf oder Termin anfragen</h2>
                 <p>Dauert nur eine Minute. Wir melden uns bei Ihnen.</p>
-
                 <form class="hero-form" name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="homepage-contact">
+                    <p hidden><label>Bitte nicht ausfüllen: <input name="bot-field"></label></p>
 
-                    <p hidden>
-                        <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-                    </p>
-
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" required>
-
-                    <label for="phone">Telefon</label>
-                    <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Telefon</label>
+                            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+                        </div>
+                    </div>
 
                     <label for="email">E-Mail</label>
                     <input id="email" name="email" type="email" autocomplete="email" required>
 
                     <label for="appliance">Gerät</label>
-                    <select id="appliance" name="appliance" required>
+                    <select id="appliance" name="appliance" required data-cfg-options="applianceOptions">
                         <option value="">Bitte wählen</option>
-                        <option value="waschmaschine">Waschmaschine</option>
-                        <option value="geschirrspueler">Geschirrspüler</option>
-                        <option value="trockner">Trockner</option>
-                        <option value="herd-ofen">Herd / Ofen</option>
-                        <option value="kühlschrank">Kühlschrank</option>
-                        <option value="gefrierschrank">Gefrierschrank</option>
-                        <option value="mikrowelle">Mikrowelle</option>
-                        <option value="dunstabzugshaube">Dunstabzugshaube</option>
-                        <option value="kaffeemaschine">Kaffeemaschine</option>
-                        <option value="sonstiges">Sonstiges</option>
                     </select>
 
                     <label for="problem">Problem</label>
-                    <textarea id="problem" name="problem" rows="4" placeholder="Was ist passiert? Z.B. Maschine pumpt nicht ab, Herd heizt nicht..."></textarea>
+                    <textarea id="problem" name="problem" rows="3" placeholder="Was ist passiert? Z.B. Maschine pumpt nicht ab, Herd heizt nicht..."></textarea>
 
                     <label for="area">Bezirk oder Postleitzahl</label>
                     <input id="area" name="area" type="text" autocomplete="postal-code">
@@ -139,105 +118,98 @@
                     </label>
 
                     <button class="button button-primary button-full" type="submit">Jetzt Anfrage senden</button>
+                    <p class="form-microcopy">Kostenlos & unverbindlich · Antwort meist am selben Tag</p>
                 </form>
             </aside>
         </div>
     </section>
 
-    <section class="info-section">
+    <!-- ==================== TRUST STRIP ==================== -->
+    <section class="trust-strip">
+        <div class="container">
+            <div class="trust-grid" data-cfg-section="trustBadges">
+                <!-- Erzeugt aus site-config.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="info-section" id="leistungen">
         <div class="container">
             <div class="section-heading">
                 <p class="section-kicker">Unsere Leistungen</p>
                 <h2>Welches Gerät macht Probleme?</h2>
             </div>
-
-            <div class="service-grid">
-                <article class="service-card reveal">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg></div>
-                    <h3>Waschmaschine</h3>
-                    <p>Schleudert nicht, pumpt nicht ab, die Trommel dreht sich nicht oder die Tür klemmt? Wir prüfen das Problem vor Ort und reparieren direkt.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-1">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-3-3v6"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg></div>
-                    <h3>Geschirrspüler</h3>
-                    <p>Geschirr bleibt schmutzig, Wasser steht in der Maschine oder es tropft? Wir finden die Ursache und beheben den Defekt bei Ihnen zu Hause.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-2">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16a5 5 0 0 1 0-8"/><path d="M12 18a8 8 0 0 0 0-12"/><path d="M16 16a5 5 0 0 0 0-8"/><rect x="7" y="20" width="10" height="2" rx="1"/></svg></div>
-                    <h3>Trockner</h3>
-                    <p>Wäsche wird nicht trocken, Fehlermeldung im Display oder keine Wärme mehr? Wir prüfen Heizung, Sensoren und Steuerung direkt vor Ort.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-3">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><circle cx="12" cy="16" r="2"/></svg></div>
-                    <h3>Herd & Backofen</h3>
-                    <p>Kochfeld reagiert nicht, Backofen bleibt kalt oder einzelne Platten heizen nicht? Wir diagnostizieren das Problem und reparieren, was sinnvoll ist.</p>
-                </article>
+            <div class="service-grid" data-cfg-section="services">
+                <!-- Erzeugt aus site-config.js -->
             </div>
         </div>
     </section>
 
+    <!-- ==================== MID-PAGE CTA ==================== -->
+    <section class="mid-cta">
+        <div class="container text-center">
+            <p class="mid-cta-text">Ihr Gerät ist hier nicht dabei? Kontaktieren Sie uns – wir helfen gerne weiter.</p>
+            <a class="button button-primary" href="#anfrage-formular">Anfrage stellen</a>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS STEPS ==================== -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-kicker">In drei Schritten</p>
+                <h2>So einfach geht's</h2>
+            </div>
+            <ol class="process-steps process-horizontal" data-cfg-section="processSteps">
+                <!-- Erzeugt aus site-config.js -->
+            </ol>
+            <div class="process-cta">
+                <a class="button button-primary" href="#anfrage-formular">Jetzt Anfrage stellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COVERAGE ==================== -->
     <section class="info-section info-section-muted">
         <div class="container">
-            <div class="section-heading">
+            <div class="section-heading text-center">
+                <p class="section-kicker">Einsatzgebiet</p>
+                <h2>Hausgeräte-Reparatur in ganz Berlin</h2>
+            </div>
+            <p class="coverage-text" data-cfg-section="coverage">
+                Wir fahren in alle Berliner Bezirke: Mitte, Prenzlauer Berg, Friedrichshain, Kreuzberg, Neukölln, Charlottenburg, Schöneberg, Tempelhof, Pankow und weitere. Geben Sie bei Ihrer Anfrage einfach Ihren Bezirk oder Ihre Postleitzahl an.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== BENEFITS ==================== -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-heading text-center">
                 <p class="section-kicker">Ihre Vorteile</p>
                 <h2>Warum Kunden in Berlin uns beauftragen</h2>
             </div>
-
-            <div class="service-grid">
-                <article class="service-card reveal">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                    <h3>Direkt erreichbar</h3>
-                    <p>Kein Callcenter, keine Warteschleife. Sie rufen an – wir gehen ran. Oder stellen Sie Ihre Anfrage einfach online.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-1">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <h3>Reparatur bei Ihnen zu Hause</h3>
-                    <p>Wir kommen in Ihren Berliner Bezirk. Kein Abbauen, kein Transport – wir reparieren direkt vor Ort.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-2">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-                    <h3>Klare Absprache vorab</h3>
-                    <p>Bevor wir anfangen, erklären wir Ihnen, was defekt ist und mit welchen Kosten Sie rechnen können.</p>
-                </article>
-
-                <article class="service-card reveal reveal-delay-3">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-                    <h3>Ehrlich, auch wenn’s nicht lohnt</h3>
-                    <p>Wenn eine Reparatur teurer käme als ein neues Gerät, sagen wir Ihnen das. Ohne versteckte Kosten.</p>
-                </article>
+            <div class="service-grid" data-cfg-section="benefits">
+                <!-- Erzeugt aus site-config.js -->
             </div>
         </div>
     </section>
 
-    <section class="info-section info-section-muted">
-        <div class="container two-column-layout">
-            <div>
-                <div class="section-heading">
-                    <p class="section-kicker">In drei Schritten</p>
-                    <h2>So einfach geht’s</h2>
-                </div>
-                <ol class="process-steps">
-                    <li>Anfrage stellen – per Telefon, Kontaktformular oder WhatsApp. Beschreiben Sie kurz, welches Gerät betroffen ist.</li>
-                    <li>Termin abstimmen – wir melden uns zeitnah und vereinbaren einen passenden Termin bei Ihnen in Berlin.</li>
-                    <li>Prüfung und Reparatur – vor Ort erklären wir den Befund und reparieren direkt, wenn es sinnvoll ist.</li>
-                </ol>
+    <!-- ==================== FAQ ==================== -->
+    <section class="info-section info-section-muted" id="faq">
+        <div class="container">
+            <div class="section-heading text-center">
+                <p class="section-kicker">Häufige Fragen</p>
+                <h2>Gut zu wissen</h2>
             </div>
-
-            <div>
-                <div class="section-heading">
-                    <p class="section-kicker">Einsatzgebiet</p>
-                    <h2>Hausgeräte-Reparatur in ganz Berlin</h2>
-                </div>
-                <p>Wir fahren in alle Berliner Bezirke: Mitte, Prenzlauer Berg, Friedrichshain, Kreuzberg, Neukölln, Charlottenburg, Schöneberg, Tempelhof, Pankow und weitere. Geben Sie bei Ihrer Anfrage einfach Ihren Bezirk oder Ihre Postleitzahl an.</p>
+            <div class="faq-list" data-cfg-section="faq">
+                <!-- Erzeugt aus site-config.js -->
             </div>
         </div>
     </section>
 
+    <!-- ==================== FINAL CTA ==================== -->
     <section class="cta-section">
         <div class="container cta-box">
             <div>
@@ -246,39 +218,18 @@
                 <p>Unkompliziert, bei Ihnen vor Ort und mit ehrlicher Beratung. Rufen Sie uns an oder stellen Sie eine Anfrage.</p>
             </div>
             <div class="hero-actions">
-                <a class="button button-primary" href="tel:+493012345678">Jetzt anrufen</a>
+                <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">Jetzt anrufen</a>
                 <a class="button button-secondary" href="contact-de.html">Anfrage stellen</a>
             </div>
         </div>
     </section>
-</main>
 
-    <section class="trust-strip">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <span>Fachbetrieb für Hausgeräte</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                    <span>Termine innerhalb weniger Tage</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <span>Ganz Berlin – alle Bezirke</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                    <span>Faire, transparente Preise</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
+    <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer">
         <div class="container footer-inner">
-            <p>&copy; <span data-current-year></span> Hausgeräte Service Berlin</p>
+            <p>&copy; <span data-current-year></span> <span data-cfg="businessName">Hausgeräte Service Berlin</span></p>
             <nav aria-label="Footer-Navigation">
                 <ul class="footer-nav-list">
                     <li><a href="contact-de.html">Kontakt</a></li>
@@ -289,18 +240,22 @@
         </div>
     </footer>
 
+    <!-- ==================== MOBILE CTA BAR ==================== -->
     <div class="mobile-cta-bar">
-        <a class="button button-primary" href="tel:+493012345678">
+        <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16" style="margin-right:0.35rem"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Anrufen
         </a>
         <a class="button button-secondary" href="#anfrage-formular">Anfrage stellen</a>
     </div>
 
-    <a class="whatsapp-float" href="https://wa.me/493012345678" target="_blank" rel="noopener noreferrer" aria-label="Kontakt über WhatsApp">
+    <!-- ==================== WHATSAPP ==================== -->
+    <a class="whatsapp-float" href="https://wa.me/493012345678" data-cfg-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Kontakt über WhatsApp">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
     </a>
 
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="js/site-config.js"></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

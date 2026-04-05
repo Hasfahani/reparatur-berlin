@@ -1,0 +1,201 @@
+/*  ===================================================
+ *  SITE CONFIGURATION — Zentrale Konfigurationsdatei
+ *  ===================================================
+ *
+ *  Alle änderbaren Inhalte an einer Stelle.
+ *  Business-Name, Telefon, Services, FAQ usw. werden
+ *  von main.js automatisch in jede Seite eingefügt.
+ *
+ *  Anleitung:
+ *  1. Werte hier anpassen
+ *  2. Seite im Browser neu laden — fertig
+ *
+ *  Hinweis: <title> und <meta>-Tags in den HTML-Dateien
+ *  müssen bei Namensänderung manuell aktualisiert werden
+ *  (für SEO / Social-Media-Vorschau).
+ */
+
+window.SITE_CONFIG = {
+
+    // =========================
+    //  BUSINESS INFORMATION
+    // =========================
+    businessName:    "Hausgeräte Service Berlin",
+    businessNameEN:  "Home Appliance Service Berlin",
+    tagline:         "Berlin vor Ort",
+    taglineEN:       "On-site in Berlin",
+
+    // =========================
+    //  CONTACT
+    // =========================
+    phone:           "+493012345678",
+    phoneDisplay:    "030 1234 5678",
+    email:           "service@hausgeraete-berlin.example",
+    whatsapp:        "493012345678",
+    domain:          "YOURDOMAIN.de",
+
+    // =========================
+    //  LOCATION
+    // =========================
+    city: "Berlin",
+    districts: [
+        "Mitte", "Prenzlauer Berg", "Friedrichshain", "Kreuzberg",
+        "Neukölln", "Charlottenburg", "Schöneberg", "Tempelhof",
+        "Pankow"
+    ],
+
+    // =========================
+    //  SERVICES
+    //  Karten auf der Startseite.
+    //  Reihenfolge = Anzeigereihenfolge.
+    //  Einfach Objekte hinzufügen / entfernen.
+    // =========================
+    services: [
+        {
+            id:   "waschmaschine",
+            name: "Waschmaschine",
+            desc: "Schleudert nicht, pumpt nicht ab, die Trommel dreht sich nicht oder die Tür klemmt? Wir prüfen das Problem vor Ort und reparieren direkt.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>'
+        },
+        {
+            id:   "geschirrspueler",
+            name: "Geschirrspüler",
+            desc: "Geschirr bleibt schmutzig, Wasser steht in der Maschine oder es tropft? Wir finden die Ursache und beheben den Defekt bei Ihnen zu Hause.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-3-3v6"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>'
+        },
+        {
+            id:   "trockner",
+            name: "Trockner",
+            desc: "Wäsche wird nicht trocken, Fehlermeldung im Display oder keine Wärme mehr? Wir prüfen Heizung, Sensoren und Steuerung direkt vor Ort.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16a5 5 0 0 1 0-8"/><path d="M12 18a8 8 0 0 0 0-12"/><path d="M16 16a5 5 0 0 0 0-8"/><rect x="7" y="20" width="10" height="2" rx="1"/></svg>'
+        },
+        {
+            id:   "herd-ofen",
+            name: "Herd & Backofen",
+            desc: "Kochfeld reagiert nicht, Backofen bleibt kalt oder einzelne Platten heizen nicht? Wir diagnostizieren das Problem und reparieren, was sinnvoll ist.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><circle cx="12" cy="16" r="2"/></svg>'
+        }
+    ],
+
+    // =========================
+    //  APPLIANCE DROPDOWN
+    //  Optionen im Anfrageformular.
+    //  Kann mehr Einträge als „services" haben.
+    // =========================
+    applianceOptions: [
+        { value: "waschmaschine",     label: "Waschmaschine" },
+        { value: "geschirrspueler",   label: "Geschirrspüler" },
+        { value: "trockner",          label: "Trockner" },
+        { value: "herd-ofen",         label: "Herd / Ofen" },
+        { value: "kuehlschrank",      label: "Kühlschrank" },
+        { value: "gefrierschrank",    label: "Gefrierschrank" },
+        { value: "mikrowelle",        label: "Mikrowelle" },
+        { value: "dunstabzugshaube",  label: "Dunstabzugshaube" },
+        { value: "kaffeemaschine",    label: "Kaffeemaschine" },
+        { value: "sonstiges",         label: "Sonstiges" }
+    ],
+
+    // =========================
+    //  TRUST BADGES
+    // =========================
+    trustBadges: [
+        {
+            text: "Fachbetrieb für Hausgeräte",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+        },
+        {
+            text: "Termine innerhalb weniger Tage",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
+        },
+        {
+            text: "Ganz Berlin \u2013 alle Bezirke",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+        },
+        {
+            text: "Faire, transparente Preise",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+        }
+    ],
+
+    // =========================
+    //  BENEFITS (Warum wir)
+    // =========================
+    benefits: [
+        {
+            title: "Direkt erreichbar",
+            desc:  "Kein Callcenter, keine Warteschleife. Sie rufen an \u2013 wir gehen ran. Oder stellen Sie Ihre Anfrage einfach online.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
+        },
+        {
+            title: "Reparatur bei Ihnen zu Hause",
+            desc:  "Wir kommen in Ihren Berliner Bezirk. Kein Abbauen, kein Transport \u2013 wir reparieren direkt vor Ort.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+        },
+        {
+            title: "Klare Absprache vorab",
+            desc:  "Bevor wir anfangen, erklären wir Ihnen, was defekt ist und mit welchen Kosten Sie rechnen können.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'
+        },
+        {
+            title: "Ehrlich, auch wenn\u2019s nicht lohnt",
+            desc:  "Wenn eine Reparatur teurer käme als ein neues Gerät, sagen wir Ihnen das. Ohne versteckte Kosten.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+        }
+    ],
+
+    // =========================
+    //  PROCESS STEPS
+    // =========================
+    processSteps: [
+        {
+            title: "Anfrage stellen",
+            desc:  "per Telefon, Kontaktformular oder WhatsApp. Beschreiben Sie kurz, welches Gerät betroffen ist."
+        },
+        {
+            title: "Termin abstimmen",
+            desc:  "wir melden uns zeitnah und vereinbaren einen passenden Termin bei Ihnen in Berlin."
+        },
+        {
+            title: "Prüfung und Reparatur",
+            desc:  "vor Ort erklären wir den Befund und reparieren direkt, wenn es sinnvoll ist."
+        }
+    ],
+
+    // =========================
+    //  FAQ
+    //  Erstes Element startet offen.
+    // =========================
+    faq: [
+        {
+            q: "Was kostet eine Reparatur?",
+            a: "Die Kosten hängen vom Gerät und Defekt ab. Vor einer Reparatur erhalten Sie immer eine Einschätzung, damit Sie entscheiden können, ob sich der Aufwand lohnt."
+        },
+        {
+            q: "Wie schnell können Sie kommen?",
+            a: "In der Regel vereinbaren wir Termine innerhalb weniger Tage. Bei dringenden Fällen versuchen wir, kurzfristige Lösungen zu finden."
+        },
+        {
+            q: "Welche Geräte reparieren Sie?",
+            a: "Wir reparieren Waschmaschinen, Geschirrspüler, Trockner, Herde, Backöfen, Kühlschränke, Gefrierschränke und viele weitere Haushaltsgeräte."
+        },
+        {
+            q: "Muss ich das Gerät vorher abbauen?",
+            a: "Nein. Wir kommen zu Ihnen nach Hause und prüfen das Gerät direkt an seinem Standort. Sie müssen nichts vorbereiten."
+        },
+        {
+            q: "Was, wenn sich die Reparatur nicht lohnt?",
+            a: "Dann sagen wir Ihnen das offen. Wenn ein neues Gerät günstiger wäre als die Reparatur, beraten wir Sie ehrlich \u2013 ohne versteckte Kosten."
+        }
+    ],
+
+    // =========================
+    //  STRUCTURED DATA (JSON-LD)
+    //  Wird automatisch generiert.
+    // =========================
+    serviceTypes: [
+        "Waschmaschinenreparatur",
+        "Geschirrspülerreparatur",
+        "Trocknerreparatur",
+        "Herd- und Ofenreparatur"
+    ]
+};

@@ -1184,3 +1184,160 @@ textarea {
         bottom: 5rem;
     }
 }
+
+/* ===========================
+   CONVERSION-FOCUSED ADDITIONS
+   =========================== */
+
+/* Form row: 2-column on desktop */
+.form-row {
+    display: grid;
+    gap: 0;
+}
+
+.form-field label {
+    display: block;
+}
+
+@media (min-width: 30rem) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0 0.75rem;
+    }
+}
+
+/* Form microcopy */
+.form-microcopy {
+    margin: 0.5rem 0 0;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Mid-page CTA strip */
+.mid-cta {
+    padding: 2rem 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.mid-cta-text {
+    margin: 0 0 1rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Horizontal process steps (3-col on desktop) */
+.process-horizontal {
+    list-style: none;
+    padding: 0;
+}
+
+@media (min-width: 48rem) {
+    .process-horizontal {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .process-horizontal li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .process-horizontal li::before {
+        min-width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Process CTA */
+.process-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Coverage text */
+.coverage-text {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* FAQ accordion */
+.faq-list {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+}
+
+.faq-item[open] {
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--accent-soft, rgba(180, 87, 45, 0.1));
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform var(--transition), background-color var(--transition);
+}
+
+.faq-item[open] summary::after {
+    content: '\2212';
+    background: var(--accent);
+    color: #fff;
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.25rem 1.25rem;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
