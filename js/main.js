@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cfg = window.SITE_CONFIG || {};
+    const lang = document.documentElement.lang || "de";
+    const isEN = lang === "en";
+
+    /** Pick English or German config array/value. */
+    function pick(base, enKey) {
+        return isEN && cfg[enKey] ? cfg[enKey] : cfg[base];
+    }
 
     // -------------------------------------------------------
     //  1. CONFIG INJECTION — text, links, generated sections
@@ -8,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1a. Simple text replacement: <span data-cfg="businessName">
     document.querySelectorAll("[data-cfg]").forEach((el) => {
         const key = el.dataset.cfg;
-        if (cfg[key] !== undefined) el.textContent = cfg[key];
+        const enKey = key + "EN";
+        const val = isEN && cfg[enKey] !== undefined ? cfg[enKey] : cfg[key];
+        if (val !== undefined) el.textContent = val;
     });
 
     // 1b. Link replacement: <a data-cfg-href="phoneLink">
@@ -29,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 1c. Generated sections
-    renderServices(cfg);
-    renderTrustBadges(cfg);
-    renderBenefits(cfg);
-    renderProcessSteps(cfg);
-    renderFAQ(cfg);
-    renderApplianceOptions(cfg);
-    renderCoverageText(cfg);
-    renderStructuredData(cfg);
+    renderServices(cfg, isEN);
+    renderTrustBadges(cfg, isEN);
+    renderBenefits(cfg, isEN);
+    renderProcessSteps(cfg, isEN);
+    renderFAQ(cfg, isEN);
+    renderApplianceOptions(cfg, isEN);
+    renderCoverageText(cfg, isEN);
+    renderStructuredData(cfg, isEN);
 
     // -------------------------------------------------------
     //  2. YEAR DISPLAY
@@ -114,11 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //  and populates it from config. No container = no-op.
 // ===========================================================
 
-function renderServices(cfg) {
+function renderServices(cfg, isEN) {
+    const data = isEN && cfg.servicesEN ? cfg.servicesEN : cfg.services;
     const container = document.querySelector('[data-cfg-section="services"]');
-    if (!container || !cfg.services) return;
+    if (!container || !data) return;
     container.innerHTML = "";
-    cfg.services.forEach((s, i) => {
+    data.forEach((s, i) => {
         const delay = i > 0 ? " reveal-delay-" + i : "";
         const article = document.createElement("article");
         article.className = "service-card reveal" + delay;
@@ -131,11 +141,12 @@ function renderServices(cfg) {
     observeNewReveals(container);
 }
 
-function renderTrustBadges(cfg) {
+function renderTrustBadges(cfg, isEN) {
+    const data = isEN && cfg.trustBadgesEN ? cfg.trustBadgesEN : cfg.trustBadges;
     const container = document.querySelector('[data-cfg-section="trustBadges"]');
-    if (!container || !cfg.trustBadges) return;
+    if (!container || !data) return;
     container.innerHTML = "";
-    cfg.trustBadges.forEach((b) => {
+    data.forEach((b) => {
         const div = document.createElement("div");
         div.className = "trust-item";
         div.innerHTML =
@@ -145,11 +156,12 @@ function renderTrustBadges(cfg) {
     });
 }
 
-function renderBenefits(cfg) {
+function renderBenefits(cfg, isEN) {
+    const data = isEN && cfg.benefitsEN ? cfg.benefitsEN : cfg.benefits;
     const container = document.querySelector('[data-cfg-section="benefits"]');
-    if (!container || !cfg.benefits) return;
+    if (!container || !data) return;
     container.innerHTML = "";
-    cfg.benefits.forEach((b, i) => {
+    data.forEach((b, i) => {
         const delay = i > 0 ? " reveal-delay-" + i : "";
         const article = document.createElement("article");
         article.className = "service-card reveal" + delay;
@@ -162,22 +174,24 @@ function renderBenefits(cfg) {
     observeNewReveals(container);
 }
 
-function renderProcessSteps(cfg) {
+function renderProcessSteps(cfg, isEN) {
+    const data = isEN && cfg.processStepsEN ? cfg.processStepsEN : cfg.processSteps;
     const container = document.querySelector('[data-cfg-section="processSteps"]');
-    if (!container || !cfg.processSteps) return;
+    if (!container || !data) return;
     container.innerHTML = "";
-    cfg.processSteps.forEach((step) => {
+    data.forEach((step) => {
         const li = document.createElement("li");
         li.innerHTML = "<strong>" + esc(step.title) + "</strong> \u2013 " + esc(step.desc);
         container.appendChild(li);
     });
 }
 
-function renderFAQ(cfg) {
+function renderFAQ(cfg, isEN) {
+    const data = isEN && cfg.faqEN ? cfg.faqEN : cfg.faq;
     const container = document.querySelector('[data-cfg-section="faq"]');
-    if (!container || !cfg.faq) return;
+    if (!container || !data) return;
     container.innerHTML = "";
-    cfg.faq.forEach((item, i) => {
+    data.forEach((item, i) => {
         const details = document.createElement("details");
         details.className = "faq-item";
         if (i === 0) details.setAttribute("open", "");
@@ -188,12 +202,13 @@ function renderFAQ(cfg) {
     });
 }
 
-function renderApplianceOptions(cfg) {
+function renderApplianceOptions(cfg, isEN) {
+    const data = isEN && cfg.applianceOptionsEN ? cfg.applianceOptionsEN : cfg.applianceOptions;
     const select = document.querySelector('[data-cfg-options="applianceOptions"]');
-    if (!select || !cfg.applianceOptions) return;
+    if (!select || !data) return;
     // Keep only the first placeholder <option>
     while (select.options.length > 1) select.remove(1);
-    cfg.applianceOptions.forEach((opt) => {
+    data.forEach((opt) => {
         const o = document.createElement("option");
         o.value = opt.value;
         o.textContent = opt.label;
@@ -201,27 +216,40 @@ function renderApplianceOptions(cfg) {
     });
 }
 
-function renderCoverageText(cfg) {
+function renderCoverageText(cfg, isEN) {
     const el = document.querySelector('[data-cfg-section="coverage"]');
     if (!el || !cfg.districts) return;
-    el.textContent =
-        "Wir fahren in alle Berliner Bezirke: " +
-        cfg.districts.join(", ") +
-        " und weitere. Geben Sie bei Ihrer Anfrage einfach Ihren Bezirk oder Ihre Postleitzahl an.";
+    if (isEN) {
+        el.textContent =
+            "We serve all Berlin districts: " +
+            cfg.districts.join(", ") +
+            " and more. Simply include your district or postal code in your request.";
+    } else {
+        el.textContent =
+            "Wir fahren in alle Berliner Bezirke: " +
+            cfg.districts.join(", ") +
+            " und weitere. Geben Sie bei Ihrer Anfrage einfach Ihren Bezirk oder Ihre Postleitzahl an.";
+    }
 }
 
-function renderStructuredData(cfg) {
+function renderStructuredData(cfg, isEN) {
     const existing = document.getElementById("ld-json");
     if (existing) existing.remove();
     if (!cfg.businessName) return;
 
+    const name = isEN && cfg.businessNameEN ? cfg.businessNameEN : cfg.businessName;
+    const desc = isEN
+        ? "Home appliance repair in " + cfg.city +
+          ". Washing machines, dishwashers, dryers and ovens \u2013 on-site at your home."
+        : "Hausgeräte-Reparatur in " + cfg.city +
+          ". Waschmaschine, Geschirrspüler, Trockner und Herd \u2013 direkt bei Ihnen vor Ort.";
+    const types = isEN && cfg.serviceTypesEN ? cfg.serviceTypesEN : cfg.serviceTypes;
+
     const ld = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": cfg.businessName,
-        "description":
-            "Hausgeräte-Reparatur in " + cfg.city +
-            ". Waschmaschine, Geschirrspüler, Trockner und Herd \u2013 direkt bei Ihnen vor Ort.",
+        "name": name,
+        "description": desc,
         "url": "https://www." + cfg.domain,
         "telephone": cfg.phone,
         "areaServed": { "@type": "City", "name": cfg.city },
@@ -231,7 +259,7 @@ function renderStructuredData(cfg) {
             "addressCountry": "DE"
         }
     };
-    if (cfg.serviceTypes) ld.serviceType = cfg.serviceTypes;
+    if (types) ld.serviceType = types;
 
     const script = document.createElement("script");
     script.type = "application/ld+json";

@@ -197,5 +197,135 @@ window.SITE_CONFIG = {
         "Geschirrspülerreparatur",
         "Trocknerreparatur",
         "Herd- und Ofenreparatur"
+    ],
+    serviceTypesEN: [
+        "Washing machine repair",
+        "Dishwasher repair",
+        "Dryer repair",
+        "Oven and stove repair"
+    ],
+
+    // =========================
+    //  ENGLISH TRANSLATIONS
+    //  Benutzt auf -en.html Seiten
+    // =========================
+    servicesEN: [
+        {
+            id:   "washing-machine",
+            name: "Washing Machine",
+            desc: "Not spinning, won\u2019t drain, drum not turning, or door stuck? We diagnose and repair the issue on-site.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>'
+        },
+        {
+            id:   "dishwasher",
+            name: "Dishwasher",
+            desc: "Dishes still dirty, water standing, or leaking? We find the cause and fix the problem at your home.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-3-3v6"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>'
+        },
+        {
+            id:   "dryer",
+            name: "Dryer",
+            desc: "Clothes not drying, error on display, or no heat? We check heating, sensors and controls on-site.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16a5 5 0 0 1 0-8"/><path d="M12 18a8 8 0 0 0 0-12"/><path d="M16 16a5 5 0 0 0 0-8"/><rect x="7" y="20" width="10" height="2" rx="1"/></svg>'
+        },
+        {
+            id:   "oven-stove",
+            name: "Oven & Stove",
+            desc: "Cooktop not responding, oven stays cold, or individual burners not heating? We diagnose and repair what makes sense.",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><circle cx="12" cy="16" r="2"/></svg>'
+        }
+    ],
+
+    applianceOptionsEN: [
+        { value: "washing-machine",  label: "Washing Machine" },
+        { value: "dishwasher",       label: "Dishwasher" },
+        { value: "dryer",            label: "Dryer" },
+        { value: "oven-stove",       label: "Oven / Stove" },
+        { value: "refrigerator",     label: "Refrigerator" },
+        { value: "freezer",          label: "Freezer" },
+        { value: "microwave",        label: "Microwave" },
+        { value: "range-hood",       label: "Range Hood" },
+        { value: "coffee-machine",   label: "Coffee Machine" },
+        { value: "other",            label: "Other" }
+    ],
+
+    trustBadgesEN: [
+        {
+            text: "Certified Appliance Service",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+        },
+        {
+            text: "Appointments Within Days",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
+        },
+        {
+            text: "All Berlin Districts",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+        },
+        {
+            text: "Fair, Transparent Prices",
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+        }
+    ],
+
+    benefitsEN: [
+        {
+            title: "Quick Response",
+            desc:  "No call centre, no waiting. Call us and we pick up \u2013 or send your request online.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
+        },
+        {
+            title: "On-site Service in Berlin",
+            desc:  "We come to your Berlin district. No dismounting, no transport \u2013 we repair right at your home.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+        },
+        {
+            title: "Transparent Communication",
+            desc:  "Before we start, we explain what\u2019s wrong and what the expected cost will be.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'
+        },
+        {
+            title: "Repair Only When It Makes Sense",
+            desc:  "If a repair would cost more than a new appliance, we\u2019ll tell you honestly. No hidden fees.",
+            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+        }
+    ],
+
+    processStepsEN: [
+        {
+            title: "Submit your request",
+            desc:  "by phone, contact form, or WhatsApp. Briefly describe which appliance is affected."
+        },
+        {
+            title: "Schedule an appointment",
+            desc:  "we\u2019ll get back to you promptly and arrange a convenient time at your home in Berlin."
+        },
+        {
+            title: "Diagnosis and repair",
+            desc:  "on-site we explain our findings and repair directly if it makes sense."
+        }
+    ],
+
+    faqEN: [
+        {
+            q: "How much does a repair cost?",
+            a: "The cost depends on the appliance and the defect. Before any repair, you\u2019ll always receive an estimate so you can decide whether it\u2019s worth it."
+        },
+        {
+            q: "How quickly can you come?",
+            a: "We typically schedule appointments within a few days. For urgent cases, we try to find a short-notice solution."
+        },
+        {
+            q: "Which appliances do you repair?",
+            a: "We repair washing machines, dishwashers, dryers, ovens, stoves, refrigerators, freezers and many other household appliances."
+        },
+        {
+            q: "Do I need to disconnect the appliance beforehand?",
+            a: "No. We come to your home and check the appliance right where it is. You don\u2019t need to prepare anything."
+        },
+        {
+            q: "What if the repair isn\u2019t worth it?",
+            a: "Then we\u2019ll tell you openly. If a new appliance would be cheaper than the repair, we advise you honestly \u2013 no hidden costs."
+        }
     ]
 };
