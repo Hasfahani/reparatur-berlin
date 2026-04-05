@@ -13,11 +13,13 @@
     --shadow-sm: 0 8px 20px rgba(60, 36, 20, 0.05);
     --shadow-md: 0 18px 40px rgba(60, 36, 20, 0.08);
     --shadow-lg: 0 30px 60px rgba(60, 36, 20, 0.12);
+    --shadow-glow: 0 0 0 1px rgba(180, 87, 45, 0.12), 0 20px 44px rgba(60, 36, 20, 0.13);
     --radius-sm: 0.75rem;
     --radius: 1rem;
     --radius-lg: 1.4rem;
     --container-width: 72rem;
     --transition: 180ms ease;
+    --transition-slow: 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 *,
@@ -129,6 +131,22 @@ textarea {
     color: var(--accent-dark);
 }
 
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
 .site-brand {
     color: var(--text);
     text-decoration: none;
@@ -155,6 +173,13 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     gap: 0.85rem;
+}
+
+.footer-nav-list li + li::before {
+    content: '·';
+    margin-right: 0.85rem;
+    color: var(--border);
+    font-weight: 700;
 }
 
 .nav-link,
@@ -244,6 +269,23 @@ textarea {
     padding: 3.25rem 0;
 }
 
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -6rem;
+    right: -4rem;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180, 87, 45, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
 .hero-grid,
 .two-column-layout,
 .contact-grid,
@@ -277,6 +319,17 @@ textarea {
     font-size: clamp(1.6rem, 3vw, 2.35rem);
 }
 
+.text-center .section-heading h2::after,
+.section-heading.text-center h2::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
 .hero-text,
 .page-hero p,
 .cta-box p,
@@ -303,18 +356,42 @@ textarea {
 .hero-benefits,
 .feature-list,
 .process-list {
-    padding-left: 1.2rem;
+    padding-left: 0;
 }
 
 .hero-benefits {
     margin: 1.25rem 0 0;
     display: grid;
-    gap: 0.45rem;
+    gap: 0.55rem;
     color: var(--text-muted);
+    list-style: none;
+}
+
+.hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hero-benefits li::before {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4572d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: 0.75rem;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .info-section-muted {
-    background: rgba(239, 224, 202, 0.38);
+    background:
+        linear-gradient(135deg, rgba(239, 224, 202, 0.38) 0%, rgba(239, 224, 202, 0.18) 100%);
 }
 
 /* Cards */
@@ -333,8 +410,9 @@ textarea {
 
 .service-card:hover,
 .contact-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 22px 48px rgba(60, 36, 20, 0.12);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(180, 87, 45, 0.22);
 }
 
 .hero-card,
@@ -418,6 +496,16 @@ textarea {
     color: #8a7d72;
 }
 
+.hero-form input:hover,
+.hero-form select:hover,
+.hero-form textarea:hover,
+.contact-form input:hover,
+.contact-form select:hover,
+.contact-form textarea:hover {
+    border-color: #bfa98f;
+    background: #fffefa;
+}
+
 .hero-form textarea,
 .contact-form textarea {
     resize: vertical;
@@ -473,19 +561,25 @@ textarea {
 
 .button:hover,
 .button:focus-visible {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 60ms;
 }
 
 .button-primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: #fff;
     box-shadow: 0 10px 22px rgba(180, 87, 45, 0.22);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-    background: var(--accent-dark);
+    background: linear-gradient(135deg, var(--accent-dark) 0%, #6e2f13 100%);
     color: #fff;
+    box-shadow: 0 14px 30px rgba(180, 87, 45, 0.32);
 }
 
 .button-secondary {
@@ -563,7 +657,8 @@ textarea {
 
 .site-footer {
     border-top: 1px solid rgba(95, 85, 76, 0.12);
-    background: rgba(255, 250, 243, 0.92);
+    background:
+        linear-gradient(180deg, rgba(255, 250, 243, 0.92) 0%, rgba(246, 241, 232, 0.98) 100%);
     margin-top: 1rem;
 }
 
@@ -943,6 +1038,17 @@ textarea {
 .hero-card {
     border-top: 3px solid var(--accent);
     position: relative;
+    overflow: hidden;
+}
+
+.hero-card::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
 }
 
 /* Process steps — styled numbers */
@@ -985,6 +1091,7 @@ textarea {
     padding: 2rem 0;
     border-top: 1px solid rgba(220, 203, 181, 0.6);
     border-bottom: 1px solid rgba(220, 203, 181, 0.6);
+    background: rgba(243, 223, 211, 0.18);
 }
 
 .trust-grid {
@@ -1013,6 +1120,13 @@ textarea {
     background: var(--accent-soft);
     color: var(--accent-dark);
     flex-shrink: 0;
+    transition: transform var(--transition), background-color var(--transition);
+}
+
+.trust-item:hover .trust-icon {
+    transform: scale(1.1);
+    background: var(--accent);
+    color: #fff;
 }
 
 .trust-icon svg {
@@ -1098,9 +1212,24 @@ textarea {
 
 .cta-box {
     background:
-        radial-gradient(circle at bottom right, rgba(180, 87, 45, 0.06), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(180, 87, 45, 0.08), transparent 60%),
+        radial-gradient(circle at top left, rgba(180, 87, 45, 0.04), transparent 40%),
         var(--surface);
     border-top: 3px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: rgba(180, 87, 45, 0.05);
+    pointer-events: none;
 }
 
 /* ===========================
@@ -1212,21 +1341,26 @@ textarea {
     text-align: center;
     font-size: 0.82rem;
     color: var(--text-muted);
+    letter-spacing: 0.01em;
+    opacity: 0.85;
 }
 
 /* Mid-page CTA strip */
 .mid-cta {
-    padding: 2rem 0;
-    background: var(--surface);
+    padding: 2.25rem 0;
+    background:
+        linear-gradient(135deg, rgba(180, 87, 45, 0.04) 0%, transparent 50%),
+        var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     text-align: center;
 }
 
 .mid-cta-text {
-    margin: 0 0 1rem;
+    margin: 0 0 1.25rem;
     color: var(--text-muted);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 /* Horizontal process steps (3-col on desktop) */
@@ -1240,6 +1374,24 @@ textarea {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        position: relative;
+    }
+
+    .process-horizontal::before {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        left: calc(16.67% + 1.5rem);
+        right: calc(16.67% + 1.5rem);
+        height: 2px;
+        background: repeating-linear-gradient(
+            90deg,
+            var(--border) 0,
+            var(--border) 6px,
+            transparent 6px,
+            transparent 12px
+        );
+        pointer-events: none;
     }
 
     .process-horizontal li {
@@ -1248,6 +1400,7 @@ textarea {
         align-items: center;
         text-align: center;
         gap: 0.5rem;
+        position: relative;
     }
 
     .process-horizontal li::before {
@@ -1255,6 +1408,8 @@ textarea {
         height: 3rem;
         font-size: 1.25rem;
         margin-bottom: 0.25rem;
+        position: relative;
+        z-index: 1;
     }
 }
 
@@ -1272,6 +1427,11 @@ textarea {
     color: var(--text-muted);
     font-size: 1.05rem;
     line-height: 1.8;
+    padding: 1.5rem 2rem;
+    background: var(--surface);
+    border: 1px solid rgba(220, 203, 181, 0.7);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 /* FAQ accordion */
@@ -1287,11 +1447,16 @@ textarea {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: box-shadow var(--transition);
+    transition: box-shadow var(--transition-slow), border-color var(--transition);
+}
+
+.faq-item:hover {
+    border-color: rgba(180, 87, 45, 0.2);
 }
 
 .faq-item[open] {
     box-shadow: var(--shadow-sm);
+    border-color: rgba(180, 87, 45, 0.25);
 }
 
 .faq-item summary {
@@ -1303,6 +1468,11 @@ textarea {
     font-weight: 700;
     cursor: pointer;
     list-style: none;
+    transition: background-color var(--transition);
+}
+
+.faq-item summary:hover {
+    background: rgba(180, 87, 45, 0.03);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -1334,6 +1504,12 @@ textarea {
 
 .faq-answer {
     padding: 0 1.25rem 1.25rem;
+    animation: faqSlideIn 250ms ease;
+}
+
+@keyframes faqSlideIn {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .faq-answer p {
