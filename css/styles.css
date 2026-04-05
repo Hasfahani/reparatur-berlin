@@ -109,6 +109,7 @@ textarea {
     flex-direction: column;
     gap: 1rem;
     padding: 0.95rem 0;
+    position: relative;
 }
 
 .brand-block {
@@ -619,6 +620,41 @@ textarea {
     50% { transform: scale(1.08); }
 }
 
+/* Hamburger menu toggle */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color var(--transition), border-color var(--transition);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    background: var(--surface-strong);
+    border-color: var(--accent);
+}
+
+.menu-toggle svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--text);
+    transition: transform var(--transition);
+}
+
+.menu-toggle[aria-expanded="true"] svg {
+    transform: rotate(90deg);
+}
+
 /* Utility */
 
 .text-center {
@@ -630,20 +666,188 @@ textarea {
     border-radius: var(--radius);
 }
 
-/* Responsive */
+/* Responsive — Mobile first */
 
 @media (max-width: 47.99rem) {
+    /* Wider container gutters on mobile */
+    .container,
+    .narrow-container {
+        width: min(100% - 2rem, var(--container-width));
+    }
+
+    /* Header: row layout with hamburger */
+    .header-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.75rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile nav: slide-down panel */
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        background: rgba(251, 247, 240, 0.97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        transition: max-height 300ms ease, opacity 200ms ease;
+    }
+
+    .site-nav.is-open {
+        max-height: 20rem;
+        opacity: 1;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        min-height: 3rem;
+        padding: 0.5rem 0;
+        font-size: 1.05rem;
+        border-bottom: 1px solid rgba(220, 203, 181, 0.5);
+    }
+
+    .nav-link::after {
+        bottom: 0;
+    }
+
+    .nav-list li:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .nav-list li:last-child {
+        padding-top: 0.5rem;
+    }
+
+    .lang-switch {
+        width: 100%;
+        justify-content: center;
+        min-height: 2.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero section refinements */
+    .hero-section,
+    .page-hero,
+    .info-section {
+        padding: 2rem 0;
+    }
+
     .hero-copy h1 {
         max-width: 100%;
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
     }
 
     .hero-actions .button {
         width: 100%;
+        min-height: 3.25rem;
+        font-size: 1.05rem;
     }
 
-    .nav-list {
-        flex-wrap: nowrap;
-        padding-bottom: 0.25rem;
+    /* Cards */
+    .hero-card {
+        padding: 1.25rem;
+    }
+
+    .service-card,
+    .contact-card {
+        padding: 1.15rem;
+    }
+
+    /* Form: prevent iOS zoom, larger touch targets */
+    .hero-form input,
+    .hero-form select,
+    .hero-form textarea,
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 0.85rem 0.9rem;
+        min-height: 3rem;
+    }
+
+    .checkbox-label {
+        font-size: 0.88rem;
+        gap: 0.75rem;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.15rem;
+    }
+
+    /* CTA section */
+    .cta-box {
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .cta-box .hero-actions {
+        justify-content: center;
+    }
+
+    .cta-section {
+        padding: 0.75rem 0 2.5rem;
+    }
+
+    /* Footer */
+    .footer-inner {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-nav-list {
+        justify-content: center;
+    }
+
+    .footer-nav-list a {
+        min-height: 2.5rem;
+        font-size: 0.88rem;
+    }
+
+    /* WhatsApp button: more space from edge */
+    .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    /* Process list spacing */
+    .process-list {
+        padding-left: 1.4rem;
+    }
+
+    .process-list li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Section heading */
+    .section-heading {
+        margin-bottom: 1rem;
     }
 }
 
