@@ -1,331 +1,351 @@
-/*  ===================================================
- *  SITE CONFIGURATION — Zentrale Konfigurationsdatei
- *  ===================================================
+/*
+ * Central placeholder-first website configuration.
  *
- *  Alle änderbaren Inhalte an einer Stelle.
- *  Business-Name, Telefon, Services, FAQ usw. werden
- *  von main.js automatisch in jede Seite eingefügt.
- *
- *  Anleitung:
- *  1. Werte hier anpassen
- *  2. Seite im Browser neu laden — fertig
- *
- *  Hinweis: <title> und <meta>-Tags in den HTML-Dateien
- *  müssen bei Namensänderung manuell aktualisiert werden
- *  (für SEO / Social-Media-Vorschau).
+ * Update this file when the final business details are ready.
+ * The site reads these values for visible copy, contact links,
+ * reusable sections and SEO placeholders.
  */
 
-window.SITE_CONFIG = {
+(function () {
+    const PLACEHOLDERS = {
+        BUSINESS_NAME: "{{BUSINESS_NAME}}",
+        PHONE_NUMBER: "{{PHONE_NUMBER}}",
+        PHONE_DISPLAY: "{{PHONE_NUMBER}}",
+        EMAIL: "{{EMAIL}}",
+        WHATSAPP_NUMBER: "{{WHATSAPP_NUMBER}}",
+        DOMAIN: "{{DOMAIN}}",
+        ADDRESS_LINE_1: "{{ADDRESS_LINE_1}}",
+        ADDRESS_LINE_2: "{{ADDRESS_LINE_2}}",
+        POSTAL_CODE: "{{POSTAL_CODE}}",
+        CITY: "{{CITY}}",
+        OPENING_HOURS: "{{OPENING_HOURS}}",
+        PRIMARY_SERVICE: "{{PRIMARY_SERVICE}}",
+        SERVICE_LIST: "{{SERVICE_LIST}}",
+        CTA_PRIMARY: "{{CTA_PRIMARY}}",
+        CTA_SECONDARY: "{{CTA_SECONDARY}}",
+        LEGAL_OWNER: "{{LEGAL_OWNER}}",
+        LEGAL_REPRESENTATIVE: "{{LEGAL_REPRESENTATIVE}}",
+        VAT_ID: "{{VAT_ID}}"
+    };
 
-    // =========================
-    //  BUSINESS INFORMATION
-    // =========================
-    businessName:    "Hausgeräte Service Berlin",
-    businessNameEN:  "Home Appliance Service Berlin",
-    tagline:         "Berlin vor Ort",
-    taglineEN:       "On-site in Berlin",
-
-    // =========================
-    //  CONTACT
-    // =========================
-    phone:           "+493012345678",
-    phoneDisplay:    "030 1234 5678",
-    email:           "service@hausgeraete-berlin.example",
-    whatsapp:        "493012345678",
-    domain:          "YOURDOMAIN.de",
-
-    // =========================
-    //  LOCATION
-    // =========================
-    city: "Berlin",
-    districts: [
-        "Mitte", "Prenzlauer Berg", "Friedrichshain", "Kreuzberg",
-        "Neukölln", "Charlottenburg", "Schöneberg", "Tempelhof",
-        "Pankow"
-    ],
-
-    // =========================
-    //  SERVICES
-    //  Karten auf der Startseite.
-    //  Reihenfolge = Anzeigereihenfolge.
-    //  Einfach Objekte hinzufügen / entfernen.
-    // =========================
-    services: [
-        {
-            id:   "waschmaschine",
-            name: "Waschmaschine",
-            desc: "Schleudert nicht, pumpt nicht ab, die Trommel dreht sich nicht oder die Tür klemmt? Wir prüfen das Problem vor Ort und reparieren direkt.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>'
+    window.SITE_CONFIG = {
+        placeholders: PLACEHOLDERS,
+        brand: {
+            name: PLACEHOLDERS.BUSINESS_NAME,
+            nameEN: PLACEHOLDERS.BUSINESS_NAME,
+            tagline: "Berlin service template",
+            taglineEN: "Berlin repair template",
+            city: "Berlin",
+            countryCode: "DE",
+            theme: {
+                primary: "#d36336",
+                primaryDark: "#9f3d1d",
+                primarySoft: "#fde7db",
+                heading: "#161616",
+                text: "#343434",
+                textMuted: "#666666",
+                surface: "#fffdf9",
+                surfaceAlt: "#f5f0ea",
+                surfaceDark: "#1d1f23",
+                border: "#e8d8cb",
+                success: "#25734d",
+                highlight: "#f3c56b"
+            }
         },
-        {
-            id:   "geschirrspueler",
-            name: "Geschirrspüler",
-            desc: "Geschirr bleibt schmutzig, Wasser steht in der Maschine oder es tropft? Wir finden die Ursache und beheben den Defekt bei Ihnen zu Hause.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-3-3v6"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>'
+        contact: {
+            phone: PLACEHOLDERS.PHONE_NUMBER,
+            phoneDisplay: PLACEHOLDERS.PHONE_DISPLAY,
+            email: PLACEHOLDERS.EMAIL,
+            whatsapp: PLACEHOLDERS.WHATSAPP_NUMBER,
+            domain: PLACEHOLDERS.DOMAIN,
+            openingHours: PLACEHOLDERS.OPENING_HOURS,
+            addressLines: [PLACEHOLDERS.ADDRESS_LINE_1, PLACEHOLDERS.ADDRESS_LINE_2],
+            postalCode: PLACEHOLDERS.POSTAL_CODE,
+            city: PLACEHOLDERS.CITY
         },
-        {
-            id:   "trockner",
-            name: "Trockner",
-            desc: "Wäsche wird nicht trocken, Fehlermeldung im Display oder keine Wärme mehr? Wir prüfen Heizung, Sensoren und Steuerung direkt vor Ort.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16a5 5 0 0 1 0-8"/><path d="M12 18a8 8 0 0 0 0-12"/><path d="M16 16a5 5 0 0 0 0-8"/><rect x="7" y="20" width="10" height="2" rx="1"/></svg>'
+        districts: ["Mitte", "Prenzlauer Berg", "Friedrichshain", "Kreuzberg", "Neukölln", "Charlottenburg", "Schöneberg", "Tempelhof", "Pankow", "Wedding", "Steglitz", "Lichtenberg"],
+        metrics: {
+            de: [
+                { value: "Berlinweit", label: "Lokale Präsenz mit klarer Ausrichtung auf Suchanfragen aus Berlin" },
+                { value: "Premium", label: "Strukturiert für Vertrauen, Qualität und einen starken ersten Eindruck" },
+                { value: "Flexibel", label: "In wenigen Minuten auf Marke, Servicefokus und Kontaktdaten anpassbar" }
+            ],
+            en: [
+                { value: "Berlin-wide", label: "Coverage with strong local positioning" },
+                { value: "Clear", label: "Communication around timing, process and next steps" },
+                { value: "Flexible", label: "Template ready for changing services and branding" }
+            ]
         },
-        {
-            id:   "herd-ofen",
-            name: "Herd & Backofen",
-            desc: "Kochfeld reagiert nicht, Backofen bleibt kalt oder einzelne Platten heizen nicht? Wir diagnostizieren das Problem und reparieren, was sinnvoll ist.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><circle cx="12" cy="16" r="2"/></svg>'
+        trustBadges: {
+            de: [
+                "Klarer Weg von der Suchanfrage bis zur Kontaktaufnahme",
+                "Berlin-Fokus für starke lokale Relevanz",
+                "Premium-Auftritt statt generischer Handwerker-Optik",
+                "Vor-Ort-, Werkstatt- oder Hybridmodell flexibel darstellbar"
+            ],
+            en: [
+                "Structured enquiries and clear follow-up",
+                "Berlin-focused setup for local visibility",
+                "Easy to adapt for on-site or workshop service",
+                "CTA-focused template for faster lead capture"
+            ]
+        },
+        services: {
+            de: [
+                {
+                    title: "{{PRIMARY_SERVICE}}",
+                    copy: "Die Hauptleistung steht bewusst als sauberer Platzhalter bereit und kann direkt auf Ihr finales Kerngeschäft oder Ihre profitabelste Servicekategorie zugeschnitten werden."
+                },
+                {
+                    title: "Reparaturen mit lokalem Vertrauensaufbau",
+                    copy: "Die Karten funktionieren für Waschmaschinen, Geschirrspüler, Elektronik, Handyreparaturen oder andere Felder, ohne wie eine austauschbare Vorlage zu wirken."
+                },
+                {
+                    title: "Fehlerdiagnose, Anfrage und Terminlogik",
+                    copy: "Die Seite führt Interessenten mit klaren Schritten von der Suchanfrage über das Problemverständnis bis zur Kontaktaufnahme oder Terminvereinbarung."
+                },
+                {
+                    title: "Berlin als echter Conversion-Hebel",
+                    copy: "Bezirke, Zielgruppen, Einsatzgebiete und lokale Suchintentionen sind bereits eingebaut und können später präzise auf Ihre Marktposition geschärft werden."
+                }
+            ],
+            en: [
+                {
+                    title: "{{PRIMARY_SERVICE}}",
+                    copy: "The main service stays editable so you can later align the website with the final business focus."
+                },
+                {
+                    title: "Appliance and everyday repair work",
+                    copy: "This card structure fits washing machines, dishwashers, dryers, ovens, electronics or other repair categories."
+                },
+                {
+                    title: "Diagnosis and clear next steps",
+                    copy: "Visitors are guided into a request flow with strong clarity, without hardcoded promises or fixed pricing claims."
+                },
+                {
+                    title: "Service across Berlin",
+                    copy: "Local relevance is already built in and can later be refined for districts, niches or specialisations."
+                }
+            ]
+        },
+        deviceGroups: {
+            de: ["Waschmaschine", "Geschirrspüler", "Trockner", "Herd und Backofen", "Kühlgeräte", "Kleingeräte", "Elektronik", "Weitere Leistungen auf Anfrage"],
+            en: ["Washing machine", "Dishwasher", "Dryer", "Oven and stove", "Cooling appliances", "Small appliances", "Electronics", "Additional services on request"]
+        },
+        reasons: {
+            de: [
+                {
+                    title: "Vertrauen schon vor dem ersten Anruf",
+                    copy: "Die Seite kommuniziert klar, wertig und ruhig. Genau das senkt Zweifel und erhöht die Wahrscheinlichkeit, dass Besucher tatsächlich Kontakt aufnehmen."
+                },
+                {
+                    title: "Schneller Weg zur Anfrage",
+                    copy: "CTA, Formulare und Kontaktmöglichkeiten sind sichtbar, mobilfreundlich und auf lokale Suchanfragen mit hoher Handlungsabsicht ausgerichtet."
+                },
+                {
+                    title: "Professionell, aber nicht starr",
+                    copy: "Business-Name, Kontaktdaten, Farbwelt, Keywords und Servicekarten lassen sich zentral austauschen, ohne dass die Seite an Qualität verliert."
+                }
+            ],
+            en: [
+                {
+                    title: "Trust through clarity",
+                    copy: "The wording is transparent on purpose and avoids generic, overblown claims."
+                },
+                {
+                    title: "Fast path to contact",
+                    copy: "CTA placement, forms and contact options are optimised for mobile visitors and local searches."
+                },
+                {
+                    title: "Easy to update",
+                    copy: "Business name, contact data, colour palette, keywords and service cards can be changed centrally."
+                }
+            ]
+        },
+        process: {
+            de: [
+                {
+                    title: "Anfrage senden",
+                    copy: "Interessenten schildern kurz Gerät, Problem und Berliner Bezirk."
+                },
+                {
+                    title: "Rückmeldung erhalten",
+                    copy: "Die Vorlage kommuniziert den nächsten Schritt klar per Telefon, E-Mail oder WhatsApp."
+                },
+                {
+                    title: "Termin oder weitere Infos",
+                    copy: "Je nach finalem Geschäftsmodell lässt sich dieser Schritt auf Vor-Ort-Service oder Werkstattannahme anpassen."
+                }
+            ],
+            en: [
+                {
+                    title: "Send a request",
+                    copy: "Visitors describe the appliance, issue and Berlin district in a few lines."
+                },
+                {
+                    title: "Receive a response",
+                    copy: "The template clearly communicates the next step by phone, email or WhatsApp."
+                },
+                {
+                    title: "Book the next step",
+                    copy: "This stage can later be adapted for on-site visits, workshop drop-off or remote triage."
+                }
+            ]
+        },
+        testimonials: {
+            de: [
+                {
+                    quote: "Die Seite wirkt hochwertig, ruhig und sofort vertrauenswürdig. Genau so sollte ein Berliner Reparaturbetrieb digital auftreten.",
+                    author: "Beispielbewertung, Berlin-Mitte",
+                    role: "Platzhalter für eine spätere echte Kundenstimme"
+                },
+                {
+                    quote: "Schon auf dem Handy ist sofort klar, wo ich anrufen oder anfragen muss. Das fühlt sich professionell und glaubwürdig an.",
+                    author: "Beispielbewertung, Berlin-Pankow",
+                    role: "Platzhalter für eine spätere echte Kundenstimme"
+                },
+                {
+                    quote: "Die Struktur verbindet Design, Local SEO und Conversion sehr sauber. Sie wirkt wie eine Website, die wirklich Anfragen gewinnen soll.",
+                    author: "Beispielbewertung, Berlin-Charlottenburg",
+                    role: "Platzhalter für eine spätere echte Kundenstimme"
+                }
+            ],
+            en: [
+                {
+                    quote: "The website feels professional and guides people straight into the enquiry flow. That is exactly what a Berlin repair brand needs.",
+                    author: "Sample review, Berlin-Mitte",
+                    role: "Placeholder for a future customer voice"
+                },
+                {
+                    quote: "Clear structure, strong mobile presentation and immediate contact options. It creates trust before the first call.",
+                    author: "Sample review, Berlin-Pankow",
+                    role: "Placeholder for a future customer voice"
+                },
+                {
+                    quote: "The structure can be adapted to a concrete repair niche very quickly without rebuilding the whole site.",
+                    author: "Sample review, Berlin-Charlottenburg",
+                    role: "Placeholder for a future customer voice"
+                }
+            ]
+        },
+        faq: {
+            de: [
+                {
+                    q: "Kann ich den finalen Business-Namen später einfach austauschen?",
+                    a: "Ja. Der Name ist zentral konfiguriert und wird in Branding, Footer, Kontaktblock und strukturierten Daten wiederverwendet."
+                },
+                {
+                    q: "Was passiert, wenn sich Services oder Keywords ändern?",
+                    a: "Die Servicekarten, Textmodule und SEO-Vorlagen sind bewusst flexibel angelegt, damit Sie Schwerpunkte später ohne Redesign anpassen können."
+                },
+                {
+                    q: "Ist die Seite für lokale Sichtbarkeit in Berlin vorbereitet?",
+                    a: "Ja. Struktur, Headings, CTA-Logik, semantische Abschnitte und Berlin-Bezug sind bereits so aufgebaut, dass sie für Local SEO sauber erweitert werden können."
+                },
+                {
+                    q: "Kann später ein echtes Buchungssystem angeschlossen werden?",
+                    a: "Ja. Die Formulare sind so markiert, dass eine spätere Backend- oder CRM-Anbindung ohne kompletten Umbau möglich bleibt."
+                },
+                {
+                    q: "Wirkt die Seite auch ohne finale Marke schon professionell?",
+                    a: "Ja. Genau dafür ist sie gebaut: als hochwertige Vorlage, die schon jetzt stark aussieht und später mit Ihrer finalen Identität nur noch präziser wird."
+                }
+            ],
+            en: [
+                {
+                    q: "Can the final business name be swapped in later?",
+                    a: "Yes. The name is centralised and reused in branding, footer, contact blocks and structured data."
+                },
+                {
+                    q: "What if services or keywords change later?",
+                    a: "Service cards, content modules and SEO templates are intentionally flexible so you can adjust focus areas without redesigning the site."
+                },
+                {
+                    q: "Is the site prepared for local visibility in Berlin?",
+                    a: "Yes. Structure, headings, CTA logic, semantic sections and Berlin relevance are already set up for future Local SEO refinement."
+                },
+                {
+                    q: "Can a real booking system be connected later?",
+                    a: "Yes. The forms are marked so a later backend or CRM integration can be added without rebuilding the front-end."
+                }
+            ]
+        },
+        contactHighlights: {
+            de: [
+                "Telefon, Formular und WhatsApp als klare Kontaktwege",
+                "Formulartext für schnelle mobile Nutzung optimiert",
+                "Hinweisflächen für finale Servicezeiten und Adresse"
+            ],
+            en: [
+                "Phone, form and WhatsApp as clear contact routes",
+                "Form copy optimised for fast mobile use",
+                "Dedicated placeholders for final opening hours and address"
+            ]
+        },
+        premiumSignals: {
+            de: [
+                {
+                    title: "Professioneller Erstkontakt",
+                    copy: "Schon vor dem ersten Gespräch vermittelt die Seite Klarheit, Struktur und Verlässlichkeit."
+                },
+                {
+                    title: "Lokal relevant in Berlin",
+                    copy: "Der Berlin-Bezug ist sichtbar eingebaut, ohne die Seite auf starre Keyword-Kombinationen festzulegen."
+                },
+                {
+                    title: "Für echte Anfragen gebaut",
+                    copy: "Alle wichtigen Wege zur Kontaktaufnahme sind sichtbar, einfach und auf mobile Nutzung optimiert."
+                }
+            ],
+            en: [
+                {
+                    title: "Professional first impression",
+                    copy: "Before the first call, the website already communicates clarity, structure and reliability."
+                },
+                {
+                    title: "Locally relevant in Berlin",
+                    copy: "Berlin relevance is built into the structure without locking the site into rigid keyword combinations."
+                },
+                {
+                    title: "Built for real enquiries",
+                    copy: "Every important contact path is visible, simple and optimised for mobile visitors."
+                }
+            ]
+        },
+        differentiators: {
+            de: [
+                {
+                    title: "Keine Billigvorlage",
+                    copy: "Die Gestaltung setzt auf Ruhe, Wertigkeit und Substanz statt auf laute Werbeoptik oder generische Handwerker-Klischees."
+                },
+                {
+                    title: "Flexibel ohne Qualitätsverlust",
+                    copy: "Sie können Marke, Services, Farben und Keywords später austauschen, ohne die komplette Website neu aufbauen zu müssen."
+                },
+                {
+                    title: "Lead-fokussierte Struktur",
+                    copy: "Jeder Abschnitt hat eine Aufgabe: Vertrauen aufbauen, Fragen klären oder den nächsten Kontakt auslösen."
+                }
+            ],
+            en: [
+                {
+                    title: "Not a cheap template",
+                    copy: "The design leans on calm, premium structure instead of noisy sales styling or generic trade clichés."
+                },
+                {
+                    title: "Flexible without losing quality",
+                    copy: "Brand, services, colours and keywords can change later without forcing a full rebuild."
+                },
+                {
+                    title: "Lead-focused structure",
+                    copy: "Every section has a purpose: build trust, answer hesitation or trigger the next contact step."
+                }
+            ]
+        },
+        legal: {
+            owner: PLACEHOLDERS.LEGAL_OWNER,
+            representative: PLACEHOLDERS.LEGAL_REPRESENTATIVE,
+            vatId: PLACEHOLDERS.VAT_ID
         }
-    ],
-
-    // =========================
-    //  APPLIANCE DROPDOWN
-    //  Optionen im Anfrageformular.
-    //  Kann mehr Einträge als „services" haben.
-    // =========================
-    applianceOptions: [
-        { value: "waschmaschine",     label: "Waschmaschine" },
-        { value: "geschirrspueler",   label: "Geschirrspüler" },
-        { value: "trockner",          label: "Trockner" },
-        { value: "herd-ofen",         label: "Herd / Ofen" },
-        { value: "kuehlschrank",      label: "Kühlschrank" },
-        { value: "gefrierschrank",    label: "Gefrierschrank" },
-        { value: "mikrowelle",        label: "Mikrowelle" },
-        { value: "dunstabzugshaube",  label: "Dunstabzugshaube" },
-        { value: "kaffeemaschine",    label: "Kaffeemaschine" },
-        { value: "sonstiges",         label: "Sonstiges" }
-    ],
-
-    // =========================
-    //  TRUST BADGES
-    // =========================
-    trustBadges: [
-        {
-            text: "Fachbetrieb für Hausgeräte",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
-        },
-        {
-            text: "Termine innerhalb weniger Tage",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
-        },
-        {
-            text: "Ganz Berlin \u2013 alle Bezirke",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
-        },
-        {
-            text: "Faire, transparente Preise",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-        }
-    ],
-
-    // =========================
-    //  BENEFITS (Warum wir)
-    // =========================
-    benefits: [
-        {
-            title: "Direkt erreichbar",
-            desc:  "Kein Callcenter, keine Warteschleife. Sie rufen an \u2013 wir gehen ran. Oder stellen Sie Ihre Anfrage einfach online.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
-        },
-        {
-            title: "Reparatur bei Ihnen zu Hause",
-            desc:  "Wir kommen in Ihren Berliner Bezirk. Kein Abbauen, kein Transport \u2013 wir reparieren direkt vor Ort.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
-        },
-        {
-            title: "Klare Absprache vorab",
-            desc:  "Bevor wir anfangen, erklären wir Ihnen, was defekt ist und mit welchen Kosten Sie rechnen können.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'
-        },
-        {
-            title: "Ehrlich, auch wenn\u2019s nicht lohnt",
-            desc:  "Wenn eine Reparatur teurer käme als ein neues Gerät, sagen wir Ihnen das. Ohne versteckte Kosten.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
-        }
-    ],
-
-    // =========================
-    //  PROCESS STEPS
-    // =========================
-    processSteps: [
-        {
-            title: "Anfrage stellen",
-            desc:  "per Telefon, Kontaktformular oder WhatsApp. Beschreiben Sie kurz, welches Gerät betroffen ist."
-        },
-        {
-            title: "Termin abstimmen",
-            desc:  "wir melden uns zeitnah und vereinbaren einen passenden Termin bei Ihnen in Berlin."
-        },
-        {
-            title: "Prüfung und Reparatur",
-            desc:  "vor Ort erklären wir den Befund und reparieren direkt, wenn es sinnvoll ist."
-        }
-    ],
-
-    // =========================
-    //  FAQ
-    //  Erstes Element startet offen.
-    // =========================
-    faq: [
-        {
-            q: "Was kostet eine Reparatur?",
-            a: "Die Kosten hängen vom Gerät und Defekt ab. Vor einer Reparatur erhalten Sie immer eine Einschätzung, damit Sie entscheiden können, ob sich der Aufwand lohnt."
-        },
-        {
-            q: "Wie schnell können Sie kommen?",
-            a: "In der Regel vereinbaren wir Termine innerhalb weniger Tage. Bei dringenden Fällen versuchen wir, kurzfristige Lösungen zu finden."
-        },
-        {
-            q: "Welche Geräte reparieren Sie?",
-            a: "Wir reparieren Waschmaschinen, Geschirrspüler, Trockner, Herde, Backöfen, Kühlschränke, Gefrierschränke und viele weitere Haushaltsgeräte."
-        },
-        {
-            q: "Muss ich das Gerät vorher abbauen?",
-            a: "Nein. Wir kommen zu Ihnen nach Hause und prüfen das Gerät direkt an seinem Standort. Sie müssen nichts vorbereiten."
-        },
-        {
-            q: "Was, wenn sich die Reparatur nicht lohnt?",
-            a: "Dann sagen wir Ihnen das offen. Wenn ein neues Gerät günstiger wäre als die Reparatur, beraten wir Sie ehrlich \u2013 ohne versteckte Kosten."
-        }
-    ],
-
-    // =========================
-    //  STRUCTURED DATA (JSON-LD)
-    //  Wird automatisch generiert.
-    // =========================
-    serviceTypes: [
-        "Waschmaschinenreparatur",
-        "Geschirrspülerreparatur",
-        "Trocknerreparatur",
-        "Herd- und Ofenreparatur"
-    ],
-    serviceTypesEN: [
-        "Washing machine repair",
-        "Dishwasher repair",
-        "Dryer repair",
-        "Oven and stove repair"
-    ],
-
-    // =========================
-    //  ENGLISH TRANSLATIONS
-    //  Benutzt auf -en.html Seiten
-    // =========================
-    servicesEN: [
-        {
-            id:   "washing-machine",
-            name: "Washing Machine",
-            desc: "Not spinning, won\u2019t drain, drum not turning, or door stuck? We diagnose and repair the issue on-site.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>'
-        },
-        {
-            id:   "dishwasher",
-            name: "Dishwasher",
-            desc: "Dishes still dirty, water standing, or leaking? We find the cause and fix the problem at your home.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-3-3v6"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>'
-        },
-        {
-            id:   "dryer",
-            name: "Dryer",
-            desc: "Clothes not drying, error on display, or no heat? We check heating, sensors and controls on-site.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16a5 5 0 0 1 0-8"/><path d="M12 18a8 8 0 0 0 0-12"/><path d="M16 16a5 5 0 0 0 0-8"/><rect x="7" y="20" width="10" height="2" rx="1"/></svg>'
-        },
-        {
-            id:   "oven-stove",
-            name: "Oven & Stove",
-            desc: "Cooktop not responding, oven stays cold, or individual burners not heating? We diagnose and repair what makes sense.",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><circle cx="12" cy="16" r="2"/></svg>'
-        }
-    ],
-
-    applianceOptionsEN: [
-        { value: "washing-machine",  label: "Washing Machine" },
-        { value: "dishwasher",       label: "Dishwasher" },
-        { value: "dryer",            label: "Dryer" },
-        { value: "oven-stove",       label: "Oven / Stove" },
-        { value: "refrigerator",     label: "Refrigerator" },
-        { value: "freezer",          label: "Freezer" },
-        { value: "microwave",        label: "Microwave" },
-        { value: "range-hood",       label: "Range Hood" },
-        { value: "coffee-machine",   label: "Coffee Machine" },
-        { value: "other",            label: "Other" }
-    ],
-
-    trustBadgesEN: [
-        {
-            text: "Certified Appliance Service",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
-        },
-        {
-            text: "Appointments Within Days",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
-        },
-        {
-            text: "All Berlin Districts",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
-        },
-        {
-            text: "Fair, Transparent Prices",
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-        }
-    ],
-
-    benefitsEN: [
-        {
-            title: "Quick Response",
-            desc:  "No call centre, no waiting. Call us and we pick up \u2013 or send your request online.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
-        },
-        {
-            title: "On-site Service in Berlin",
-            desc:  "We come to your Berlin district. No dismounting, no transport \u2013 we repair right at your home.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
-        },
-        {
-            title: "Transparent Communication",
-            desc:  "Before we start, we explain what\u2019s wrong and what the expected cost will be.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'
-        },
-        {
-            title: "Repair Only When It Makes Sense",
-            desc:  "If a repair would cost more than a new appliance, we\u2019ll tell you honestly. No hidden fees.",
-            icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
-        }
-    ],
-
-    processStepsEN: [
-        {
-            title: "Submit your request",
-            desc:  "by phone, contact form, or WhatsApp. Briefly describe which appliance is affected."
-        },
-        {
-            title: "Schedule an appointment",
-            desc:  "we\u2019ll get back to you promptly and arrange a convenient time at your home in Berlin."
-        },
-        {
-            title: "Diagnosis and repair",
-            desc:  "on-site we explain our findings and repair directly if it makes sense."
-        }
-    ],
-
-    faqEN: [
-        {
-            q: "How much does a repair cost?",
-            a: "The cost depends on the appliance and the defect. Before any repair, you\u2019ll always receive an estimate so you can decide whether it\u2019s worth it."
-        },
-        {
-            q: "How quickly can you come?",
-            a: "We typically schedule appointments within a few days. For urgent cases, we try to find a short-notice solution."
-        },
-        {
-            q: "Which appliances do you repair?",
-            a: "We repair washing machines, dishwashers, dryers, ovens, stoves, refrigerators, freezers and many other household appliances."
-        },
-        {
-            q: "Do I need to disconnect the appliance beforehand?",
-            a: "No. We come to your home and check the appliance right where it is. You don\u2019t need to prepare anything."
-        },
-        {
-            q: "What if the repair isn\u2019t worth it?",
-            a: "Then we\u2019ll tell you openly. If a new appliance would be cheaper than the repair, we advise you honestly \u2013 no hidden costs."
-        }
-    ]
-};
+    };
+})();

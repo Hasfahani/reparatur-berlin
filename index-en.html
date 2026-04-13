@@ -3,236 +3,313 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- ============================================================
-         SEO META TAGS
-         ============================================================ -->
-    <title>Home Appliance Service Berlin | Repair for Washing Machine, Dishwasher, Dryer and Oven</title>
-    <meta name="description" content="Appliance repair service in Berlin. Fast help for broken washing machines, dishwashers, dryers and ovens. Request an appointment now.">
-    <link rel="canonical" href="https://www.YOURDOMAIN.de/index-en.html">
-    <link rel="alternate" hreflang="de" href="https://www.YOURDOMAIN.de/index.html">
-    <link rel="alternate" hreflang="en" href="https://www.YOURDOMAIN.de/index-en.html">
+    <title>{{PRIMARY_SERVICE}} in Berlin | {{BUSINESS_NAME}}</title>
+    <meta name="description" content="Professional repair website for Berlin with editable branding, local SEO structure and high-converting contact flow.">
+    <link rel="canonical" href="https://www.{{DOMAIN}}/index-en.html">
+    <link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/index.html">
+    <link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/index-en.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:site_name" content="Home Appliance Service Berlin">
-    <meta property="og:title" content="Home Appliance Service Berlin | Repair for Washing Machine, Dishwasher, Dryer and Oven">
-    <meta property="og:description" content="Appliance repair service in Berlin. Fast help for broken washing machines, dishwashers, dryers and ovens.">
-    <meta property="og:url" content="https://www.YOURDOMAIN.de/index-en.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Home Appliance Service Berlin | Repair for Washing Machine, Dishwasher, Dryer and Oven">
-    <meta name="twitter:description" content="Appliance repair service in Berlin. Fast help for broken washing machines, dishwashers, dryers and ovens.">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta property="og:title" content="{{PRIMARY_SERVICE}} in Berlin | {{BUSINESS_NAME}}">
+    <meta property="og:description" content="Premium Berlin repair website template with flexible placeholders, clear CTAs and local SEO structure.">
+    <meta property="og:url" content="https://www.{{DOMAIN}}/index-en.html">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!-- Fonts & Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- JSON-LD is generated dynamically by main.js -->
 </head>
-<body data-page="index-en">
+<body data-page="home-en">
     <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <!-- ==================== HEADER ==================== -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-block">
-                <p class="brand-kicker" data-cfg="tagline">On-site in Berlin</p>
-                <a class="site-brand" href="index-en.html" data-cfg="businessName">Home Appliance Service Berlin</a>
+                <p class="brand-kicker" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</p>
+                <a class="site-brand" href="index-en.html" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</a>
             </div>
-            <button class="menu-toggle" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
             <nav class="site-nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li><a class="nav-link" href="index-en.html">Home</a></li>
-                    <li><a class="nav-link" href="contact-en.html">Contact</a></li>
-                    <li><a class="lang-switch" href="index.html" title="Deutsche Version"><svg class="flag-icon" viewBox="0 0 5 3" aria-hidden="true"><rect width="5" height="1" y="0" fill="#000"/><rect width="5" height="1" y="1" fill="#D00"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg> DE</a></li>
+                    <li><a class="nav-link" data-page-link="home-en" href="index-en.html">Home</a></li>
+                    <li><a class="nav-link" data-page-link="contact-en" href="contact-en.html">Contact</a></li>
+                    <li><a class="nav-link" href="#services">Services</a></li>
+                    <li><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li><a class="lang-switch" href="index.html">DE</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-
-    <!-- ==================== HERO ==================== -->
-    <section class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <p class="section-kicker">Appliance repair service in Berlin</p>
-                <h1>Appliance broken? Fast repair in Berlin for washing machines, dishwashers, dryers and ovens.</h1>
-                <p class="hero-text">
-                    Your home appliance stopped working? We help with common defects quickly and hassle-free in Berlin.
-                    Call us directly or send your request online &mdash; we'll get back to you promptly to schedule an appointment.
-                </p>
-                <div class="hero-actions">
-                    <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">Call now</a>
-                    <a class="button button-secondary" href="#request-form">Request appointment</a>
-                </div>
-                <ul class="hero-benefits">
-                    <li>On-site service in Berlin</li>
-                    <li>Short-notice appointments subject to availability</li>
-                    <li>Transparent consultation before we begin</li>
-                </ul>
-            </div>
-
-            <!-- ==================== CONTACT FORM ==================== -->
-            <aside class="hero-card" id="request-form" aria-label="Request appointment">
-                <h2>Request a callback or appointment</h2>
-                <p>Non-binding request in under a minute.</p>
-                <form class="hero-form" name="homepage-contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="homepage-contact-en">
-                    <p hidden><label>Please leave empty: <input name="bot-field"></label></p>
-
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" autocomplete="name" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="phone">Phone</label>
-                            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-                        </div>
+        <section class="hero section hero-premium">
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <p class="eyebrow">Premium Repair Website Berlin</p>
+                    <h1>Built to earn trust in Berlin and turn visits into enquiries.</h1>
+                    <p class="lede">This version combines premium presentation, local relevance and a strong conversion structure. The business name, services, colour system, keywords and contact details can all change later without weakening the overall quality of the site.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Call now</a>
+                        <a class="button button-secondary" href="#contact-form">Start request</a>
                     </div>
-
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
-
-                    <label for="appliance">Appliance</label>
-                    <select id="appliance" name="appliance" required data-cfg-options="applianceOptions">
-                        <option value="">Please select</option>
-                    </select>
-
-                    <label for="problem">Problem</label>
-                    <textarea id="problem" name="problem" rows="3" placeholder="What happened? E.g. machine won't drain, oven not heating..."></textarea>
-
-                    <label for="area">District or postal code</label>
-                    <input id="area" name="area" type="text" autocomplete="postal-code">
-
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="privacy-consent" required>
-                        I have read the <a href="privacy-en.html">privacy policy</a> and agree to the processing of my data.
-                    </label>
-
-                    <button class="button button-primary button-full" type="submit">Send request now</button>
-                    <p class="form-microcopy">Free &amp; non-binding &middot; Reply usually the same day</p>
-                </form>
-            </aside>
-        </div>
-    </section>
-
-    <!-- ==================== TRUST STRIP ==================== -->
-    <section class="trust-strip">
-        <div class="container">
-            <div class="trust-grid" data-cfg-section="trustBadges">
-                <!-- Generated from site-config.js -->
+                    <div class="hero-points">
+                        <div><span>1</span><p>Positioned for visitors with real intent to call or enquire.</p></div>
+                        <div><span>2</span><p>Flexible enough for changing branding, services and SEO focus.</p></div>
+                        <div><span>3</span><p>Strong enough to feel premium instead of looking like a generic local template.</p></div>
+                    </div>
+                    <div class="hero-proof-strip">
+                        <span>Berlin-focused</span>
+                        <span>Mobile-first</span>
+                        <span>Trust-led</span>
+                        <span>Lead-ready</span>
+                    </div>
+                </div>
+                <aside class="hero-panel" id="contact-form">
+                    <p class="eyebrow">Direct enquiry</p>
+                    <h2>Request a callback, appointment or first assessment in under a minute</h2>
+                    <p class="form-note">The contact flow is intentionally simple: low friction, clear expectations and a visible next step. It works now as a premium front-end and stays ready for later CRM or scheduling integration.</p>
+                    <form class="site-form" data-form-mode="demo">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="home-name-en">Name</label>
+                                <input id="home-name-en" name="name" type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="home-phone-en">Phone</label>
+                                <input id="home-phone-en" name="phone" type="tel" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="home-email-en">Email</label>
+                            <input id="home-email-en" name="email" type="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="home-service-en">Service or device</label>
+                            <input id="home-service-en" name="service" type="text" placeholder="e.g. {{PRIMARY_SERVICE}}" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="home-message-en">Describe the issue</label>
+                            <textarea id="home-message-en" name="message" placeholder="What is broken, which Berlin district is involved, and when are you available?"></textarea>
+                        </div>
+                        <label class="checkbox-row">
+                            <input type="checkbox" required>
+                            <span>I have read the <a href="privacy-en.html">privacy policy</a> and agree to the processing of my enquiry.</span>
+                        </label>
+                        <button class="button button-primary button-full" type="submit">Send request</button>
+                    </form>
+                    <div class="form-success" hidden>
+                        <div class="success-badge">OK</div>
+                        <h3 data-success-heading>Request ready for integration</h3>
+                        <p data-success-copy>The front-end flow is working. Connect this form to your final email, CRM or booking system when the business setup is ready.</p>
+                    </div>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== SERVICES ==================== -->
-    <section class="info-section" id="services">
-        <div class="container">
-            <div class="section-heading">
-                <p class="section-kicker">Our Services</p>
-                <h2>Which appliance is giving you trouble?</h2>
-            </div>
-            <div class="service-grid" data-cfg-section="services">
-                <!-- Generated from site-config.js -->
-            </div>
-        </div>
-    </section>
+        <section class="section"><div class="container metric-grid" data-section="metrics"></div></section>
+        <section class="trust-strip"><div class="container trust-grid" data-section="trust"></div></section>
 
-    <!-- ==================== MID-PAGE CTA ==================== -->
-    <section class="mid-cta">
-        <div class="container text-center">
-            <p class="mid-cta-text">Your appliance isn't listed? Contact us &mdash; we're happy to help.</p>
-            <a class="button button-primary" href="#request-form">Send request</a>
-        </div>
-    </section>
+        <section class="section">
+            <div class="container editorial-panel">
+                <div>
+                    <p class="eyebrow">Why this feels stronger</p>
+                    <h2>It does not sell loudly. It sells through clarity, calm design and local relevance.</h2>
+                </div>
+                <div class="editorial-grid">
+                    <article>
+                        <h3>Better first impression</h3>
+                        <p>The presentation is intentionally premium, not flashy. That creates more trust from the first screen.</p>
+                    </article>
+                    <article>
+                        <h3>Local SEO with substance</h3>
+                        <p>Berlin is not just mentioned. It is built into the structure so the site can later expand into real service and district targeting.</p>
+                    </article>
+                    <article>
+                        <h3>Conversion without pressure</h3>
+                        <p>The visitor is guided clearly toward contact without the site becoming noisy, aggressive or low-trust.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- ==================== PROCESS STEPS ==================== -->
-    <section class="info-section">
-        <div class="container">
-            <div class="section-heading text-center">
-                <p class="section-kicker">Three simple steps</p>
-                <h2>How it works</h2>
+        <section class="section">
+            <div class="container premium-banner">
+                <p class="eyebrow">Premium feel without a final brand</p>
+                <h2>The website already feels like a serious Berlin provider, even though the final business identity is still open.</h2>
+                <p class="premium-banner-copy">That is the strategic advantage of this build: it is not a temporary stand-in. It is a polished premium framework that becomes even stronger once the final brand, services and proof elements are plugged in.</p>
             </div>
-            <ol class="process-steps process-horizontal" data-cfg-section="processSteps">
-                <!-- Generated from site-config.js -->
-            </ol>
-            <div class="process-cta">
-                <a class="button button-primary" href="#request-form">Send request now</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== COVERAGE ==================== -->
-    <section class="info-section info-section-muted">
-        <div class="container">
-            <div class="section-heading text-center">
-                <p class="section-kicker">Service area</p>
-                <h2>Appliance repair across Berlin</h2>
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Service structure</p>
+                    <h2>Services, copy and positioning can all be changed later.</h2>
+                    <p class="section-copy">These cards already feel like a premium Berlin repair business, while staying open for the final niche and keyword set.</p>
+                </div>
+                <div class="feature-grid" data-section="services"></div>
             </div>
-            <p class="coverage-text" data-cfg-section="coverage">
-                We serve all Berlin districts: Mitte, Prenzlauer Berg, Friedrichshain, Kreuzberg, Neuk&ouml;lln, Charlottenburg, Sch&ouml;neberg, Tempelhof, Pankow and more. Simply include your district or postal code in your request.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== BENEFITS ==================== -->
-    <section class="info-section">
-        <div class="container">
-            <div class="section-heading text-center">
-                <p class="section-kicker">Your advantages</p>
-                <h2>Why customers in Berlin choose us</h2>
+        <section class="section surface-section">
+            <div class="container split-layout">
+                <div>
+                    <p class="eyebrow">Supported categories</p>
+                    <h2>Generic structure for services, devices or verticals.</h2>
+                    <p class="section-copy">Use this area later for actual service clusters, brands, product groups or repair specialisations.</p>
+                </div>
+                <ul class="pill-list" data-section="devices"></ul>
             </div>
-            <div class="service-grid" data-cfg-section="benefits">
-                <!-- Generated from site-config.js -->
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== FAQ ==================== -->
-    <section class="info-section info-section-muted" id="faq">
-        <div class="container">
-            <div class="section-heading text-center">
-                <p class="section-kicker">Frequently asked questions</p>
-                <h2>Good to know</h2>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Why this converts</p>
+                    <h2>Trust, clarity and local relevance support each other.</h2>
+                </div>
+                <div class="reason-grid" data-section="reasons"></div>
             </div>
-            <div class="faq-list" data-cfg-section="faq">
-                <!-- Generated from site-config.js -->
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== FINAL CTA ==================== -->
-    <section class="cta-section">
-        <div class="container cta-box">
-            <div>
-                <p class="section-kicker">Appliance broken?</p>
-                <h2>Get your home appliance repaired in Berlin</h2>
-                <p>Hassle-free, at your home and with honest advice. Call us or send a request.</p>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Premium signals</p>
+                    <h2>The most important quality cues are visible before any conversation happens.</h2>
+                </div>
+                <div class="signal-grid" data-section="premium-signals"></div>
             </div>
-            <div class="hero-actions">
-                <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">Call now</a>
-                <a class="button button-secondary" href="contact-en.html">Get in touch</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="section surface-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">For the main Berlin search intents</p>
+                    <h2>The structure is ready for urgent, quality-focused and comparison-driven visitors.</h2>
+                </div>
+                <div class="intent-grid">
+                    <article class="intent-card">
+                        <h3>Need help quickly</h3>
+                        <p>Phone, WhatsApp and the form are visible immediately for people who want fast action.</p>
+                    </article>
+                    <article class="intent-card">
+                        <h3>Trying to find a serious provider</h3>
+                        <p>The website feels calm, structured and credible, which matters when visitors do not want the cheapest-looking option.</p>
+                    </article>
+                    <article class="intent-card">
+                        <h3>Want orientation first</h3>
+                        <p>Service structure, process, FAQ and trust sections answer the biggest questions before contact even starts.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">What this does better</p>
+                    <h2>It is built for impact, not just completeness.</h2>
+                </div>
+                <div class="difference-grid" data-section="differentiators"></div>
+            </div>
+        </section>
+
+        <section class="section surface-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Compared with typical local websites</p>
+                    <h2>Less randomness, more strategic control.</h2>
+                </div>
+                <div class="comparison-shell">
+                    <article class="comparison-card">
+                        <h3>Typical local website</h3>
+                        <ul class="comparison-list">
+                            <li>Generic visual language with little positioning</li>
+                            <li>Large text areas without a clear conversion role</li>
+                            <li>Contact section feels like an obligation instead of a closing move</li>
+                        </ul>
+                    </article>
+                    <article class="comparison-card">
+                        <h3>This premium framework</h3>
+                        <ul class="comparison-list">
+                            <li>Every section builds trust, orientation or readiness to make contact</li>
+                            <li>The Berlin focus is built in without locking the site into narrow early keyword decisions</li>
+                            <li>The brand and services stay flexible while the overall impression remains strong</li>
+                        </ul>
+                    </article>
+                    <article class="comparison-card">
+                        <h3>What comes later</h3>
+                        <ul class="comparison-list">
+                            <li>Final brand name, real references and a real image world</li>
+                            <li>Specific service landing pages and sharper SEO targeting</li>
+                            <li>Even more authority through real proof and market positioning</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section surface-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Process</p>
+                    <h2>How the website guides visitors into contact.</h2>
+                </div>
+                <ol class="process-list" data-section="process"></ol>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Social proof</p>
+                    <h2>Realistic placeholder reviews for later replacement.</h2>
+                </div>
+                <div class="testimonial-grid" data-section="testimonials"></div>
+            </div>
+        </section>
+
+        <section class="section surface-section">
+            <div class="container coverage-box">
+                <p class="eyebrow">Berlin focus</p>
+                <h2>Prepared for local SEO without locking in final keywords.</h2>
+                <p class="coverage-copy" data-section="coverage"></p>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container narrow-container">
+                <div class="section-heading">
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Common questions about the flexible website setup.</h2>
+                </div>
+                <div class="faq-list" data-section="faq"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container cta-band">
+                <div>
+                    <p class="eyebrow">Next step</p>
+                    <h2>Drop in the final business details when they are ready.</h2>
+                    <p class="section-copy">What already exists is a premium presentation that feels credible and conversion-focused. What comes later is your real brand, real proof and the final market position inside Berlin.</p>
+                </div>
+                <div class="button-row">
+                    <a class="button button-primary" href="contact-en.html">Open contact page</a>
+                    <a class="button button-secondary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Show phone</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="container footer-inner">
-            <p>&copy; <span data-current-year></span> <span data-cfg="businessName">Home Appliance Service Berlin</span></p>
+            <p class="footer-meta">&copy; <span data-current-year></span> <span data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</span></p>
             <nav aria-label="Footer navigation">
-                <ul class="footer-nav-list">
-                    <li><a href="contact-en.html">Contact</a></li>
+                <ul class="footer-nav">
                     <li><a href="impressum-en.html">Legal Notice</a></li>
                     <li><a href="privacy-en.html">Privacy Policy</a></li>
                 </ul>
@@ -240,22 +317,17 @@
         </div>
     </footer>
 
-    <!-- ==================== MOBILE CTA BAR ==================== -->
-    <div class="mobile-cta-bar">
-        <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16" style="margin-right:0.35rem"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call now
-        </a>
-        <a class="button button-secondary" href="#request-form">Request appointment</a>
+    <div class="mobile-cta">
+        <a class="button button-primary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Call</a>
+        <a class="button button-secondary" href="#contact-form">Request</a>
     </div>
 
-    <!-- ==================== WHATSAPP ==================== -->
-    <a class="whatsapp-float" href="https://wa.me/493012345678" data-cfg-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
+    <a class="whatsapp-float" data-template-href="https://wa.me/{{WHATSAPP_NUMBER}}" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener" data-template-aria-label="WhatsApp contact for {{BUSINESS_NAME}}" aria-label="WhatsApp contact for {{BUSINESS_NAME}}">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
     </a>
 
-    <!-- ==================== SCRIPTS ==================== -->
     <script src="js/site-config.js"></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>
+

@@ -3,103 +3,142 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kontakt & Terminanfrage | Hausgeräte Service Berlin</title>
-    <meta name="description" content="Kontaktieren Sie den Hausgeräte Service Berlin. Anruf oder Online-Anfrage für schnelle Reparaturtermine bei Waschmaschine, Geschirrspüler, Trockner und Herd in Berlin.">
-    <link rel="canonical" href="https://www.YOURDOMAIN.de/contact.html">
-    <link rel="alternate" hreflang="de" href="https://www.YOURDOMAIN.de/contact.html">
-    <link rel="alternate" hreflang="en" href="https://www.YOURDOMAIN.de/contact-en.html">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="de_DE">
-    <meta property="og:site_name" content="Hausgeräte Service Berlin">
-    <meta property="og:title" content="Kontakt & Terminanfrage | Hausgeräte Service Berlin">
-    <meta property="og:description" content="Kontaktieren Sie den Hausgeräte Service Berlin für schnelle Reparaturtermine bei Waschmaschine, Geschirrspüler, Trockner und Herd.">
-    <meta property="og:url" content="https://www.YOURDOMAIN.de/contact.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Kontakt & Terminanfrage | Hausgeräte Service Berlin">
-    <meta name="twitter:description" content="Kontaktieren Sie den Hausgeräte Service Berlin für schnelle Reparaturtermine bei Haushaltsgeräten.">
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <title>Kontakt und Anfrage | {{BUSINESS_NAME}}</title>
+    <meta name="description" content="Kontaktieren Sie {{BUSINESS_NAME}} für Reparaturanfragen in Berlin. Telefon, E-Mail, WhatsApp und Anfrageformular sind vorbereitet.">
+    <link rel="canonical" href="https://www.{{DOMAIN}}/contact.html">
+    <link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/contact.html">
+    <link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/contact-en.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-page="contact">
+<body data-page="contact-de">
     <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-block">
-                <p class="brand-kicker" data-cfg="tagline">Berlin vor Ort</p>
-                <a class="site-brand" href="index.html" data-cfg="businessName">Hausgeräte Service Berlin</a>
+                <p class="brand-kicker" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</p>
+                <a class="site-brand" href="index.html" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</a>
             </div>
-            <button class="menu-toggle" aria-expanded="false" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+            <button class="menu-toggle" aria-label="Menü" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
             <nav class="site-nav" aria-label="Hauptnavigation">
                 <ul class="nav-list">
-                    <li><a class="nav-link" href="index.html">Start</a></li>
-                    <li><a class="nav-link" href="contact.html">Kontakt</a></li>
-                    <li><a class="lang-switch" href="contact-en.html" title="English version"><svg class="flag-icon" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> EN</a></li>
+                    <li><a class="nav-link" data-page-link="home-de" href="index.html">Start</a></li>
+                    <li><a class="nav-link" data-page-link="contact-de" href="contact.html">Kontakt</a></li>
+                    <li><a class="lang-switch" href="contact-en.html">EN</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content" class="page-main">
-        <section class="page-hero">
+        <section class="section page-intro">
             <div class="container narrow-container">
-                <p class="section-kicker">Kontakt</p>
-                <h1>Termin anfragen und Störung melden</h1>
-                <p>Ersetzen Sie die folgenden Platzhalter durch Ihre echten Unternehmensdaten, bevor die Website live geht.</p>
+                <p class="eyebrow">Kontaktseite</p>
+                <h1>Kontaktaufnahme, die schnell wirkt und professionell bleibt.</h1>
+                <p class="lede">Diese Seite ist nicht nur ein Formularcontainer, sondern ein klarer Conversion-Bereich für Anrufe, Rückrufwünsche, Terminabstimmungen und den späteren Anschluss an echte Prozesse.</p>
+                <div class="contact-hero-note">
+                    <strong>Ohne finale Marke trotzdem überzeugend</strong>
+                    <p>Die Struktur gibt Besuchern schon jetzt das Gefühl, mit einem professionell geführten Berliner Anbieter zu sprechen, nicht mit einer unfertigen Übergangslösung.</p>
+                </div>
             </div>
         </section>
 
-        <section class="info-section">
-            <div class="container narrow-container contact-grid">
-                <article class="contact-card">
-                    <h2>Direkter Kontakt</h2>
-                    <dl class="contact-list">
-                        <div>
-                            <dt>Telefon</dt>
-                            <dd><a href="tel:+493012345678" data-cfg-href="phone">030 12345678</a></dd>
-                        </div>
-                        <div>
-                            <dt>E-Mail</dt>
-                            <dd><a href="mailto:service@hausgeraete-berlin.example">service@hausgeraete-berlin.example</a></dd>
-                        </div>
-                        <div>
-                            <dt>Servicezeiten</dt>
-                            <dd>Montag bis Freitag, 08:00 bis 18:00 Uhr</dd>
-                        </div>
-                    </dl>
-                </article>
+        <section class="section">
+            <div class="container contact-layout">
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <p class="eyebrow">Telefon</p>
+                        <h3>Schneller Erstkontakt</h3>
+                        <p><a data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}" data-phone-display>{{PHONE_NUMBER}}</a></p>
+                        <p class="field-note">Ideal für dringende Anfragen, schnelle Rückrufe und Besucher mit unmittelbarer Handlungsabsicht.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">E-Mail</p>
+                        <h3>Sauber dokumentierte Anfrage</h3>
+                        <p><a data-template-href="mailto:{{EMAIL}}" href="mailto:{{EMAIL}}" data-email-display>{{EMAIL}}</a></p>
+                        <p class="field-note">Sinnvoll, wenn später CRM-, Helpdesk- oder Team-Prozesse angebunden werden.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Adresse</p>
+                        <h3>Rechtlich und lokal editierbar</h3>
+                        <address><span data-template="{{ADDRESS_LINE_1}}"></span><br><span data-template="{{ADDRESS_LINE_2}}"></span><br><span data-template="{{POSTAL_CODE}} {{CITY}}"></span></address>
+                        <p class="field-note">Nur Platzhalter, bis die finalen Standortdaten feststehen.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Servicezeiten</p>
+                        <h3>Ohne starre Annahmen</h3>
+                        <p data-template="{{OPENING_HOURS}}">{{OPENING_HOURS}}</p>
+                        <p class="field-note">Kann später auch für Notdienst-, Vor-Ort- oder Werkstattzeiten angepasst werden.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Hinweise</p>
+                        <h3>Was Interessenten mitschicken sollten</h3>
+                        <ul class="contact-highlights" data-section="contact-highlights"></ul>
+                    </article>
+                    <article class="contact-card contact-card-accent">
+                        <p class="eyebrow">Vertrauen</p>
+                        <h3>Klare Erwartung statt unklarer Kontaktstrecke</h3>
+                        <p>Die Seite zeigt bewusst sofort, wie Interessenten Kontakt aufnehmen, welche Angaben hilfreich sind und wie der nächste Schritt aussieht.</p>
+                    </article>
+                </div>
 
-                <article class="contact-card">
-                    <h2>Standort in Berlin</h2>
-                    <address>
-                        Musterstraße 12<br>
-                        10115 Berlin
-                    </address>
-                    <p>Bitte prüfen und ersetzen Sie diese Beispieldaten durch Ihre vollständigen Unternehmensangaben.</p>
-                </article>
-
-                <article class="contact-card">
-                    <h2>Hinweise zur Anfrage</h2>
-                    <ul class="feature-list">
-                        <li>Geräteart und Marke angeben</li>
-                        <li>Fehlerbild oder Fehlercode kurz beschreiben</li>
-                        <li>Bezirk in Berlin und gewünschtes Zeitfenster nennen</li>
-                    </ul>
-                </article>
+                <aside class="hero-panel">
+                    <p class="eyebrow">Anfrageformular</p>
+                    <h2>Sauber strukturiertes Formular für Leads aus Berlin.</h2>
+                    <p class="form-note">Der aktuelle Stand ist als hochwertige Frontend-Vorlage einsatzbereit. Die finale Verarbeitung können Sie später an E-Mail, CRM oder ein Buchungssystem anbinden.</p>
+                    <div class="contact-assurance">
+                        <strong>Warum dieses Formular besser konvertiert</strong>
+                        <p>Wenige Felder, klare Sprache, nachvollziehbare Datenschutzkommunikation und ein sichtbarer nächster Schritt.</p>
+                    </div>
+                    <form class="site-form" data-form-mode="demo">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="contact-name">Name</label>
+                                <input id="contact-name" name="name" type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="contact-phone">Telefon</label>
+                                <input id="contact-phone" name="phone" type="tel" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="contact-email">E-Mail</label>
+                            <input id="contact-email" name="email" type="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="contact-district">Bezirk oder PLZ</label>
+                            <input id="contact-district" name="district" type="text" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="contact-message">Anliegen</label>
+                            <textarea id="contact-message" name="message" placeholder="Beschreiben Sie kurz Gerät, Problem, Wunschzeit und alle Infos, die für die erste Einschätzung wichtig sind."></textarea>
+                        </div>
+                        <label class="checkbox-row">
+                            <input type="checkbox" required>
+                            <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen.</span>
+                        </label>
+                        <button class="button button-primary button-full" type="submit">Kontaktanfrage absenden</button>
+                    </form>
+                    <div class="form-success" hidden>
+                        <div class="success-badge">OK</div>
+                        <h3 data-success-heading>Anfrage erfolgreich vorbereitet</h3>
+                        <p data-success-copy>Der Frontend-Ablauf funktioniert. Verbinden Sie dieses Formular später mit Ihrer finalen E-Mail-, CRM- oder Buchungslösung.</p>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="container footer-inner">
-            <p>© <span data-current-year></span> Hausgeräte Service Berlin</p>
-            <nav aria-label="Footer-Navigation">
-                <ul class="footer-nav-list">
-                    <li><a href="contact.html">Kontakt</a></li>
+            <p class="footer-meta">&copy; <span data-current-year></span> <span data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</span></p>
+            <nav aria-label="Footer Navigation">
+                <ul class="footer-nav">
                     <li><a href="impressum.html">Impressum</a></li>
                     <li><a href="datenschutz.html">Datenschutz</a></li>
                 </ul>
@@ -107,18 +146,16 @@
         </div>
     </footer>
 
-    <div class="mobile-cta-bar">
-        <a class="button button-primary" href="tel:+493012345678" data-cfg-href="phone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16" style="margin-right:0.35rem"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Anrufen
-        </a>
-        <a class="button button-secondary" href="contact.html">Kontakt</a>
+    <div class="mobile-cta">
+        <a class="button button-primary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Anrufen</a>
+        <a class="button button-secondary" href="#main-content">Formular</a>
     </div>
 
-    <a class="whatsapp-float" href="https://wa.me/493012345678" data-cfg-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Kontakt über WhatsApp">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
+    <a class="whatsapp-float" data-template-href="https://wa.me/{{WHATSAPP_NUMBER}}" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener" data-template-aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}" aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
     </a>
 
-    <script src="js/site-config.js"></script>`n    <script src="js/main.js" defer></script>
+    <script src="js/site-config.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

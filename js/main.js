@@ -1,298 +1,393 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cfg = window.SITE_CONFIG || {};
-    const lang = document.documentElement.lang || "de";
-    const isEN = lang === "en";
+    const lang = (document.documentElement.lang || "de").toLowerCase();
+    const isEN = lang.startsWith("en");
 
-    /** Pick English or German config array/value. */
-    function pick(base, enKey) {
-        return isEN && cfg[enKey] ? cfg[enKey] : cfg[base];
-    }
-
-    // -------------------------------------------------------
-    //  1. CONFIG INJECTION — text, links, generated sections
-    // -------------------------------------------------------
-
-    // 1a. Simple text replacement: <span data-cfg="businessName">
-    document.querySelectorAll("[data-cfg]").forEach((el) => {
-        const key = el.dataset.cfg;
-        const enKey = key + "EN";
-        const val = isEN && cfg[enKey] !== undefined ? cfg[enKey] : cfg[key];
-        if (val !== undefined) el.textContent = val;
-    });
-
-    // 1b. Link replacement: <a data-cfg-href="phoneLink">
-    if (cfg.phone) {
-        document.querySelectorAll('[data-cfg-href="phone"]').forEach((el) => {
-            el.setAttribute("href", "tel:" + cfg.phone);
-        });
-    }
-    if (cfg.whatsapp) {
-        document.querySelectorAll('[data-cfg-href="whatsapp"]').forEach((el) => {
-            el.setAttribute("href", "https://wa.me/" + cfg.whatsapp);
-        });
-    }
-    if (cfg.email) {
-        document.querySelectorAll('[data-cfg-href="email"]').forEach((el) => {
-            el.setAttribute("href", "mailto:" + cfg.email);
-        });
-    }
-
-    // 1c. Generated sections
-    renderServices(cfg, isEN);
+    applyTheme(cfg);
+    injectGlobalTokens(cfg, isEN);
+    renderMetrics(cfg, isEN);
     renderTrustBadges(cfg, isEN);
-    renderBenefits(cfg, isEN);
-    renderProcessSteps(cfg, isEN);
-    renderFAQ(cfg, isEN);
-    renderApplianceOptions(cfg, isEN);
-    renderCoverageText(cfg, isEN);
+    renderServices(cfg, isEN);
+    renderDeviceGroups(cfg, isEN);
+    renderReasons(cfg, isEN);
+    renderPremiumSignals(cfg, isEN);
+    renderDifferentiators(cfg, isEN);
+    renderProcess(cfg, isEN);
+    renderTestimonials(cfg, isEN);
+    renderFaq(cfg, isEN);
+    renderCoverage(cfg, isEN);
+    renderContactHighlights(cfg, isEN);
     renderStructuredData(cfg, isEN);
+    updateYear();
+    highlightCurrentNav();
+    setupMobileMenu();
+    setupRevealObserver();
+    setupForms(isEN);
+});
 
-    // -------------------------------------------------------
-    //  2. YEAR DISPLAY
-    // -------------------------------------------------------
-    const currentYear = new Date().getFullYear();
-    document.querySelectorAll("[data-current-year]").forEach((el) => {
-        el.textContent = String(currentYear);
-    });
+function applyTheme(cfg) {
+    const theme = cfg.brand && cfg.brand.theme;
+    if (!theme) return;
+    const root = document.documentElement;
+    root.style.setProperty("--color-primary", theme.primary);
+    root.style.setProperty("--color-primary-dark", theme.primaryDark);
+    root.style.setProperty("--color-primary-soft", theme.primarySoft);
+    root.style.setProperty("--color-heading", theme.heading);
+    root.style.setProperty("--color-text", theme.text);
+    root.style.setProperty("--color-text-muted", theme.textMuted);
+    root.style.setProperty("--color-surface", theme.surface);
+    root.style.setProperty("--color-surface-alt", theme.surfaceAlt);
+    root.style.setProperty("--color-surface-dark", theme.surfaceDark);
+    root.style.setProperty("--color-border", theme.border);
+    root.style.setProperty("--color-success", theme.success);
+    root.style.setProperty("--color-highlight", theme.highlight);
+}
 
-    // -------------------------------------------------------
-    //  3. ACTIVE NAV LINK
-    // -------------------------------------------------------
-    const currentPage = document.body.dataset.page;
-    document.querySelectorAll(".nav-link").forEach((link) => {
-        const href = link.getAttribute("href");
-        if (!href) return;
-        const target = href.replace(".html", "").replace(/-(?:de|en)$/, "");
-        const current = currentPage ? currentPage.replace(/-(?:de|en)$/, "") : "";
-        if (target === currentPage || target === current) {
-            link.setAttribute("aria-current", "page");
+function injectGlobalTokens(cfg, isEN) {
+    const tokens = getTokens(cfg, isEN);
+    document.title = replaceTokens(document.title, tokens);
+
+    document.querySelectorAll("[href]").forEach((el) => {
+        const href = el.getAttribute("href");
+        if (href && href.includes("{{")) {
+            el.setAttribute("href", replaceTokens(href, tokens));
         }
     });
 
-    // -------------------------------------------------------
-    //  4. MOBILE MENU TOGGLE
-    // -------------------------------------------------------
-    const menuToggle = document.querySelector(".menu-toggle");
-    const siteNav = document.querySelector(".site-nav");
-
-    if (menuToggle && siteNav) {
-        menuToggle.addEventListener("click", () => {
-            const isOpen = siteNav.classList.toggle("is-open");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        siteNav.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-                siteNav.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-            });
-        });
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && siteNav.classList.contains("is-open")) {
-                siteNav.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.focus();
-            }
-        });
-    }
-
-    // -------------------------------------------------------
-    //  5. SCROLL REVEAL — IntersectionObserver
-    // -------------------------------------------------------
-    const revealEls = document.querySelectorAll(".reveal");
-    if (revealEls.length) {
-        const revealObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-        revealEls.forEach((el) => revealObserver.observe(el));
-    }
-});
-
-// ===========================================================
-//  SECTION RENDERERS
-//  Each renderer checks for a container with data-cfg-section
-//  and populates it from config. No container = no-op.
-// ===========================================================
-
-function renderServices(cfg, isEN) {
-    const data = isEN && cfg.servicesEN ? cfg.servicesEN : cfg.services;
-    const container = document.querySelector('[data-cfg-section="services"]');
-    if (!container || !data) return;
-    container.innerHTML = "";
-    data.forEach((s, i) => {
-        const delay = i > 0 ? " reveal-delay-" + i : "";
-        const article = document.createElement("article");
-        article.className = "service-card reveal" + delay;
-        article.innerHTML =
-            '<div class="service-icon">' + s.icon + "</div>" +
-            "<h3>" + esc(s.name) + "</h3>" +
-            "<p>" + esc(s.desc) + "</p>";
-        container.appendChild(article);
+    document.querySelectorAll("[content]").forEach((el) => {
+        const content = el.getAttribute("content");
+        if (content && content.includes("{{")) {
+            el.setAttribute("content", replaceTokens(content, tokens));
+        }
     });
-    observeNewReveals(container);
+
+    document.querySelectorAll("[aria-label]").forEach((el) => {
+        const label = el.getAttribute("aria-label");
+        if (label && label.includes("{{")) {
+            el.setAttribute("aria-label", replaceTokens(label, tokens));
+        }
+    });
+
+    document.querySelectorAll("[data-token]").forEach((el) => {
+        const tokenName = el.getAttribute("data-token");
+        if (Object.prototype.hasOwnProperty.call(tokens, tokenName)) {
+            el.textContent = tokens[tokenName];
+        }
+    });
+
+    document.querySelectorAll("[data-template]").forEach((el) => {
+        const template = el.getAttribute("data-template") || "";
+        el.innerHTML = replaceTokens(template, tokens);
+    });
+
+    document.querySelectorAll("[data-template-href]").forEach((el) => {
+        const template = el.getAttribute("data-template-href") || "";
+        el.setAttribute("href", replaceTokens(template, tokens));
+    });
+
+    document.querySelectorAll("[data-template-content]").forEach((el) => {
+        const template = el.getAttribute("data-template-content") || "";
+        el.setAttribute("content", replaceTokens(template, tokens));
+    });
+
+    document.querySelectorAll("[data-template-aria-label]").forEach((el) => {
+        const template = el.getAttribute("data-template-aria-label") || "";
+        el.setAttribute("aria-label", replaceTokens(template, tokens));
+    });
+
+    document.querySelectorAll("[data-phone-display]").forEach((el) => {
+        el.textContent = tokens.PHONE_DISPLAY;
+    });
+
+    document.querySelectorAll("[data-email-display]").forEach((el) => {
+        el.textContent = tokens.EMAIL;
+    });
+}
+
+function getTokens(cfg, isEN) {
+    const contact = cfg.contact || {};
+    const placeholders = cfg.placeholders || {};
+    const domain = contact.domain || placeholders.DOMAIN || "{{DOMAIN}}";
+    const city = contact.city || (cfg.brand && cfg.brand.city) || "Berlin";
+    const addressLines = contact.addressLines || [];
+    return {
+        BUSINESS_NAME: isEN ? ((cfg.brand && (cfg.brand.nameEN || cfg.brand.name)) || "{{BUSINESS_NAME}}") : ((cfg.brand && cfg.brand.name) || "{{BUSINESS_NAME}}"),
+        PHONE_NUMBER: contact.phone || "{{PHONE_NUMBER}}",
+        PHONE_DISPLAY: contact.phoneDisplay || contact.phone || "{{PHONE_NUMBER}}",
+        EMAIL: contact.email || "{{EMAIL}}",
+        WHATSAPP_NUMBER: contact.whatsapp || "{{WHATSAPP_NUMBER}}",
+        DOMAIN: domain,
+        DOMAIN_URL: "https://www." + domain,
+        ADDRESS_LINE_1: addressLines[0] || "{{ADDRESS_LINE_1}}",
+        ADDRESS_LINE_2: addressLines[1] || "{{ADDRESS_LINE_2}}",
+        POSTAL_CODE: contact.postalCode || "{{POSTAL_CODE}}",
+        CITY: city,
+        OPENING_HOURS: contact.openingHours || "{{OPENING_HOURS}}",
+        PRIMARY_SERVICE: placeholders.PRIMARY_SERVICE || "{{PRIMARY_SERVICE}}",
+        SERVICE_LIST: placeholders.SERVICE_LIST || "{{SERVICE_LIST}}",
+        CTA_PRIMARY: placeholders.CTA_PRIMARY || "{{CTA_PRIMARY}}",
+        CTA_SECONDARY: placeholders.CTA_SECONDARY || "{{CTA_SECONDARY}}",
+        LEGAL_OWNER: cfg.legal && cfg.legal.owner ? cfg.legal.owner : "{{LEGAL_OWNER}}",
+        LEGAL_REPRESENTATIVE: cfg.legal && cfg.legal.representative ? cfg.legal.representative : "{{LEGAL_REPRESENTATIVE}}",
+        VAT_ID: cfg.legal && cfg.legal.vatId ? cfg.legal.vatId : "{{VAT_ID}}"
+    };
+}
+
+function replaceTokens(template, tokens) {
+    return template.replace(/\{\{([A-Z0-9_]+)\}\}/g, (_match, key) => {
+        return Object.prototype.hasOwnProperty.call(tokens, key) ? tokens[key] : "{{" + key + "}}";
+    });
+}
+
+function renderMetrics(cfg, isEN) {
+    const items = isEN ? cfg.metrics.en : cfg.metrics.de;
+    const container = document.querySelector('[data-section="metrics"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<article class="metric-card reveal">', '<strong>' + escapeHtml(item.value) + '</strong>', '<span>' + escapeHtml(item.label) + '</span>', '</article>'].join("")).join("");
 }
 
 function renderTrustBadges(cfg, isEN) {
-    const data = isEN && cfg.trustBadgesEN ? cfg.trustBadgesEN : cfg.trustBadges;
-    const container = document.querySelector('[data-cfg-section="trustBadges"]');
-    if (!container || !data) return;
-    container.innerHTML = "";
-    data.forEach((b) => {
-        const div = document.createElement("div");
-        div.className = "trust-item";
-        div.innerHTML =
-            '<div class="trust-icon">' + b.icon + "</div>" +
-            "<span>" + esc(b.text) + "</span>";
-        container.appendChild(div);
-    });
+    const items = isEN ? cfg.trustBadges.en : cfg.trustBadges.de;
+    const container = document.querySelector('[data-section="trust"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((text) => ['<div class="trust-item">', '<span class="trust-mark" aria-hidden="true"></span>', '<span>' + escapeHtml(text) + '</span>', '</div>'].join("")).join("");
 }
 
-function renderBenefits(cfg, isEN) {
-    const data = isEN && cfg.benefitsEN ? cfg.benefitsEN : cfg.benefits;
-    const container = document.querySelector('[data-cfg-section="benefits"]');
-    if (!container || !data) return;
-    container.innerHTML = "";
-    data.forEach((b, i) => {
-        const delay = i > 0 ? " reveal-delay-" + i : "";
-        const article = document.createElement("article");
-        article.className = "service-card reveal" + delay;
-        article.innerHTML =
-            '<div class="service-icon">' + b.icon + "</div>" +
-            "<h3>" + esc(b.title) + "</h3>" +
-            "<p>" + esc(b.desc) + "</p>";
-        container.appendChild(article);
-    });
-    observeNewReveals(container);
+function renderServices(cfg, isEN) {
+    const items = isEN ? cfg.services.en : cfg.services.de;
+    const container = document.querySelector('[data-section="services"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item, index) => ['<article class="feature-card reveal reveal-delay-' + Math.min(index, 3) + '">', '<div class="card-index">0' + (index + 1) + '</div>', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</article>'].join("")).join("");
 }
 
-function renderProcessSteps(cfg, isEN) {
-    const data = isEN && cfg.processStepsEN ? cfg.processStepsEN : cfg.processSteps;
-    const container = document.querySelector('[data-cfg-section="processSteps"]');
-    if (!container || !data) return;
-    container.innerHTML = "";
-    data.forEach((step) => {
-        const li = document.createElement("li");
-        li.innerHTML = "<strong>" + esc(step.title) + "</strong> \u2013 " + esc(step.desc);
-        container.appendChild(li);
-    });
+function renderDeviceGroups(cfg, isEN) {
+    const items = isEN ? cfg.deviceGroups.en : cfg.deviceGroups.de;
+    const container = document.querySelector('[data-section="devices"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => '<li class="pill-item">' + escapeHtml(item) + '</li>').join("");
 }
 
-function renderFAQ(cfg, isEN) {
-    const data = isEN && cfg.faqEN ? cfg.faqEN : cfg.faq;
-    const container = document.querySelector('[data-cfg-section="faq"]');
-    if (!container || !data) return;
-    container.innerHTML = "";
-    data.forEach((item, i) => {
-        const details = document.createElement("details");
-        details.className = "faq-item";
-        if (i === 0) details.setAttribute("open", "");
-        details.innerHTML =
-            "<summary>" + esc(item.q) + "</summary>" +
-            '<div class="faq-answer"><p>' + esc(item.a) + "</p></div>";
-        container.appendChild(details);
-    });
+function renderReasons(cfg, isEN) {
+    const items = isEN ? cfg.reasons.en : cfg.reasons.de;
+    const container = document.querySelector('[data-section="reasons"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<article class="reason-card reveal">', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</article>'].join("")).join("");
 }
 
-function renderApplianceOptions(cfg, isEN) {
-    const data = isEN && cfg.applianceOptionsEN ? cfg.applianceOptionsEN : cfg.applianceOptions;
-    const select = document.querySelector('[data-cfg-options="applianceOptions"]');
-    if (!select || !data) return;
-    // Keep only the first placeholder <option>
-    while (select.options.length > 1) select.remove(1);
-    data.forEach((opt) => {
-        const o = document.createElement("option");
-        o.value = opt.value;
-        o.textContent = opt.label;
-        select.appendChild(o);
-    });
+function renderPremiumSignals(cfg, isEN) {
+    const source = cfg.premiumSignals;
+    const items = source ? (isEN ? source.en : source.de) : null;
+    const container = document.querySelector('[data-section="premium-signals"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<article class="signal-card reveal">', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</article>'].join("")).join("");
 }
 
-function renderCoverageText(cfg, isEN) {
-    const el = document.querySelector('[data-cfg-section="coverage"]');
+function renderDifferentiators(cfg, isEN) {
+    const source = cfg.differentiators;
+    const items = source ? (isEN ? source.en : source.de) : null;
+    const container = document.querySelector('[data-section="differentiators"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<article class="difference-card reveal">', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</article>'].join("")).join("");
+}
+
+function renderProcess(cfg, isEN) {
+    const items = isEN ? cfg.process.en : cfg.process.de;
+    const container = document.querySelector('[data-section="process"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<li>', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</li>'].join("")).join("");
+}
+
+function renderTestimonials(cfg, isEN) {
+    const items = isEN ? cfg.testimonials.en : cfg.testimonials.de;
+    const container = document.querySelector('[data-section="testimonials"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => ['<article class="testimonial-card reveal">', '<p class="quote">"' + escapeHtml(item.quote) + '"</p>', '<p class="author">' + escapeHtml(item.author) + '</p>', '<p class="role">' + escapeHtml(item.role) + '</p>', '</article>'].join("")).join("");
+}
+
+function renderFaq(cfg, isEN) {
+    const items = isEN ? cfg.faq.en : cfg.faq.de;
+    const container = document.querySelector('[data-section="faq"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item, index) => ['<details class="faq-item"' + (index === 0 ? ' open' : '') + '>', '<summary>' + escapeHtml(item.q) + '</summary>', '<div class="faq-answer"><p>' + escapeHtml(item.a) + '</p></div>', '</details>'].join("")).join("");
+}
+
+function renderCoverage(cfg, isEN) {
+    const el = document.querySelector('[data-section="coverage"]');
     if (!el || !cfg.districts) return;
-    if (isEN) {
-        el.textContent =
-            "We serve all Berlin districts: " +
-            cfg.districts.join(", ") +
-            " and more. Simply include your district or postal code in your request.";
-    } else {
-        el.textContent =
-            "Wir fahren in alle Berliner Bezirke: " +
-            cfg.districts.join(", ") +
-            " und weitere. Geben Sie bei Ihrer Anfrage einfach Ihren Bezirk oder Ihre Postleitzahl an.";
-    }
+    el.textContent = isEN
+        ? 'Berlin focus: ' + cfg.districts.join(', ') + '. You can refine this list later for the actual coverage area, target districts or postcode clusters.'
+        : 'Berlin-Fokus: ' + cfg.districts.join(', ') + '. Diese Liste können Sie später an Ihr tatsächliches Einsatzgebiet, Ihre Wunschbezirke oder Postleitzahlen anpassen.';
+}
+
+function renderContactHighlights(cfg, isEN) {
+    const items = isEN ? cfg.contactHighlights.en : cfg.contactHighlights.de;
+    const container = document.querySelector('[data-section="contact-highlights"]');
+    if (!container || !items) return;
+    container.innerHTML = items.map((item) => '<li>' + escapeHtml(item) + '</li>').join("");
 }
 
 function renderStructuredData(cfg, isEN) {
-    const existing = document.getElementById("ld-json");
+    const tokens = getTokens(cfg, isEN);
+    const existing = document.getElementById('site-jsonld');
     if (existing) existing.remove();
-    if (!cfg.businessName) return;
-
-    const name = isEN && cfg.businessNameEN ? cfg.businessNameEN : cfg.businessName;
-    const desc = isEN
-        ? "Home appliance repair in " + cfg.city +
-          ". Washing machines, dishwashers, dryers and ovens \u2013 on-site at your home."
-        : "Hausgeräte-Reparatur in " + cfg.city +
-          ". Waschmaschine, Geschirrspüler, Trockner und Herd \u2013 direkt bei Ihnen vor Ort.";
-    const types = isEN && cfg.serviceTypesEN ? cfg.serviceTypesEN : cfg.serviceTypes;
-
     const ld = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": name,
-        "description": desc,
-        "url": "https://www." + cfg.domain,
-        "telephone": cfg.phone,
-        "areaServed": { "@type": "City", "name": cfg.city },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": cfg.city,
-            "addressCountry": "DE"
-        }
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: tokens.BUSINESS_NAME,
+        description: document.title,
+        url: tokens.DOMAIN_URL,
+        telephone: tokens.PHONE_NUMBER,
+        email: tokens.EMAIL,
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: [tokens.ADDRESS_LINE_1, tokens.ADDRESS_LINE_2].filter(Boolean).join(', '),
+            postalCode: tokens.POSTAL_CODE,
+            addressLocality: tokens.CITY,
+            addressCountry: cfg.brand && cfg.brand.countryCode ? cfg.brand.countryCode : 'DE'
+        },
+        areaServed: (cfg.districts || []).map((district) => ({ '@type': 'AdministrativeArea', name: district + ', Berlin' })),
+        openingHours: tokens.OPENING_HOURS
     };
-    if (types) ld.serviceType = types;
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = "ld-json";
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'site-jsonld';
     script.textContent = JSON.stringify(ld);
     document.head.appendChild(script);
 }
 
-// ===========================================================
-//  HELPERS
-// ===========================================================
-
-/** Minimal HTML-escape to prevent XSS when injecting config text. */
-function esc(str) {
-    const d = document.createElement("div");
-    d.appendChild(document.createTextNode(str));
-    return d.innerHTML;
+function updateYear() {
+    const year = String(new Date().getFullYear());
+    document.querySelectorAll('[data-current-year]').forEach((el) => { el.textContent = year; });
 }
 
-/** Observe newly added .reveal elements so they animate on scroll. */
-function observeNewReveals(container) {
-    const reveals = container.querySelectorAll(".reveal");
-    if (!reveals.length) return;
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.15 }
-    );
-    reveals.forEach((el) => observer.observe(el));
+function highlightCurrentNav() {
+    const current = document.body.getAttribute('data-page');
+    document.querySelectorAll('.nav-link').forEach((link) => {
+        if (link.getAttribute('data-page-link') === current) {
+            link.setAttribute('aria-current', 'page');
+        }
+    });
 }
+
+function setupMobileMenu() {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+function setupRevealObserver() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.2 });
+    items.forEach((item) => observer.observe(item));
+}
+
+function setupForms(isEN) {
+    document.querySelectorAll('form[data-form-mode]').forEach((form) => {
+        form.setAttribute('novalidate', 'novalidate');
+        form.querySelectorAll('input, select, textarea').forEach((field) => {
+            field.addEventListener('blur', () => validateField(field, isEN));
+            field.addEventListener('input', () => clearFieldError(field));
+        });
+        form.addEventListener('submit', (event) => {
+            const fields = Array.from(form.querySelectorAll('input, select, textarea'));
+            const invalid = fields.filter((field) => !validateField(field, isEN));
+            if (invalid.length) {
+                event.preventDefault();
+                invalid[0].focus();
+                return;
+            }
+            if (form.getAttribute('data-form-mode') === 'demo') {
+                event.preventDefault();
+                showFormSuccess(form, isEN);
+            }
+        });
+    });
+}
+
+function validateField(field, isEN) {
+    if (field.type === 'hidden' || field.name === 'bot-field') return true;
+    const value = field.type === 'checkbox' ? String(field.checked) : field.value.trim();
+    let message = '';
+    if (field.hasAttribute('required')) {
+        if (field.type === 'checkbox' && !field.checked) {
+            message = isEN ? 'Please confirm the privacy notice.' : 'Bitte bestätigen Sie den Datenschutzhinweis.';
+        } else if (!value) {
+            message = isEN ? 'Please complete this field.' : 'Bitte füllen Sie dieses Feld aus.';
+        }
+    }
+    if (!message && field.type === 'email' && value) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+            message = isEN ? 'Please enter a valid email address.' : 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
+        }
+    }
+    if (!message && field.type === 'tel' && value) {
+        const phonePattern = /^[0-9+\s()/.-]{6,}$/;
+        if (!phonePattern.test(value)) {
+            message = isEN ? 'Please enter a valid phone number.' : 'Bitte geben Sie eine gültige Telefonnummer ein.';
+        }
+    }
+    if (message) {
+        field.setAttribute('aria-invalid', 'true');
+        setFieldError(field, message);
+        return false;
+    }
+    field.removeAttribute('aria-invalid');
+    clearFieldError(field);
+    return true;
+}
+
+function setFieldError(field, message) {
+    let error = field.parentElement && field.parentElement.querySelector('.field-error');
+    if (!error) {
+        error = document.createElement('p');
+        error.className = 'field-error';
+        if (field.parentElement) {
+            field.parentElement.appendChild(error);
+        } else {
+            field.insertAdjacentElement('afterend', error);
+        }
+    }
+    error.textContent = message;
+}
+
+function clearFieldError(field) {
+    const parent = field.parentElement;
+    if (!parent) return;
+    const error = parent.querySelector('.field-error');
+    if (error) error.remove();
+}
+
+function showFormSuccess(form, isEN) {
+    const success = form.parentElement && form.parentElement.querySelector('.form-success');
+    if (!success) return;
+    form.hidden = true;
+    success.hidden = false;
+    success.classList.add('is-active');
+    success.querySelector('[data-success-heading]').textContent = isEN ? 'Request ready for integration' : 'Anfrage erfolgreich vorbereitet';
+    success.querySelector('[data-success-copy]').textContent = isEN ? 'The front-end flow is working. Connect this form to your final email, CRM or scheduling system when the business setup is ready.' : 'Der Frontend-Ablauf funktioniert. Verbinden Sie dieses Formular später mit Ihrer finalen E-Mail-, CRM- oder Buchungslösung.';
+}
+
+function escapeHtml(value) {
+    const div = document.createElement('div');
+    div.textContent = value;
+    return div.innerHTML;
+}
+
