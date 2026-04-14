@@ -1,9 +1,9 @@
-﻿(function () {
+(function () {
     window.SITE_CONFIG = {
         brand: {
             name: "FixWerk Berlin",
             nameEN: "FixWerk Berlin",
-            tagline: "Reparaturservice für Haushalte in Berlin",
+            tagline: "Reparaturservice fuer Haushalte in Berlin",
             taglineEN: "Repair service for households across Berlin",
             city: "Berlin",
             countryCode: "DE",
@@ -28,8 +28,8 @@
             email: "kontakt@fixwerk-berlin.de",
             whatsapp: "493012345678",
             domain: "fixwerk-berlin.de",
-            openingHours: "Mo–Fr 09:00-18:00, Sa 10:00-14:00",
-            addressLines: ["Invalidenstraße 120"],
+            openingHours: "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
+            addressLines: ["Invalidenstrasse 120"],
             postalCode: "10115",
             city: "Berlin"
         },
@@ -38,17 +38,17 @@
             "Prenzlauer Berg",
             "Friedrichshain",
             "Kreuzberg",
-            "Neukölln",
+            "Neukoelln",
             "Charlottenburg",
-            "Schöneberg",
+            "Schoeneberg",
             "Moabit",
             "Wedding",
             "Pankow"
         ],
         metrics: {
             de: [
-                { value: "Berlinweit", label: "Einsätze für viele Berliner Haushalte mit klarer lokaler Ausrichtung" },
-                { value: "Vor Ort", label: "Fehlerdiagnose und Einschätzung direkt bei Ihnen oder nach Geräteart per Rücksprache" },
+                { value: "Berlinweit", label: "Einsaetze fuer viele Berliner Haushalte mit klarer lokaler Ausrichtung" },
+                { value: "Vor Ort", label: "Fehlerdiagnose und Einschaetzung direkt bei Ihnen oder nach Geraeteart per Ruecksprache" },
                 { value: "Direkt", label: "Telefon, E-Mail und Anfrageformular sind ohne Umwege erreichbar" }
             ],
             en: [
@@ -59,7 +59,7 @@
         },
         trustBadges: {
             de: [
-                "Haushaltsgeräte und kleinere Reparaturen",
+                "Haushaltsgeraete und kleinere Reparaturen",
                 "Transparente Erstberatung ohne Umwege",
                 "Ruhiger, vertrauensvoller Auftritt mit Berlin-Fokus",
                 "Schnelle Kontaktaufnahme per Telefon, E-Mail oder WhatsApp"
@@ -75,19 +75,19 @@
             de: [
                 {
                     title: "Waschmaschinen-Reparatur",
-                    copy: "Wenn die Maschine nicht mehr abpumpt, schleudert oder Wasser verliert, helfen wir mit einer klaren Ersteinschätzung und einem planbaren nächsten Schritt."
+                    copy: "Wenn die Maschine nicht mehr abpumpt, schleudert oder Wasser verliert, helfen wir mit einer klaren Ersteinschaetzung und einem planbaren naechsten Schritt."
                 },
                 {
-                    title: "Geschirrspüler-Reparatur",
-                    copy: "Bei störenden Fehlermeldungen, schlechtem Reinigungsergebnis oder Undichtigkeiten prüfen wir, ob eine sinnvolle Reparatur möglich ist."
+                    title: "Geschirrspueler-Reparatur",
+                    copy: "Bei stoerenden Fehlermeldungen, schlechtem Reinigungsergebnis oder Undichtigkeiten pruefen wir, ob eine sinnvolle Reparatur moeglich ist."
                 },
                 {
                     title: "Backofen- und Herdservice",
-                    copy: "Ob fehlende Hitze, ungleichmäßiges Backen oder ausfallende Kochfelder: wir sorgen für Orientierung und eine saubere Reparaturentscheidung."
+                    copy: "Ob fehlende Hitze, ungleichmaessiges Backen oder ausfallende Kochfelder: wir sorgen fuer Orientierung und eine saubere Reparaturentscheidung."
                 },
                 {
-                    title: "Kühlgeräte und Kleingeräte",
-                    copy: "Auch bei Kühlschränken, Mikrowellen oder kleineren Haushaltsgeräten erhalten Sie eine verständliche Rückmeldung und einen passenden Serviceweg."
+                    title: "Kuehlgeraete und Kleingeraete",
+                    copy: "Auch bei Kuehlschraenken, Mikrowellen oder kleineren Haushaltsgeraeten erhalten Sie eine verstaendliche Rueckmeldung und einen passenden Serviceweg."
                 }
             ],
             en: [
@@ -112,13 +112,13 @@
         deviceGroups: {
             de: [
                 "Waschmaschine",
-                "Geschirrspüler",
+                "Geschirrspueler",
                 "Trockner",
                 "Backofen",
-                "Kühlschrank",
-                "Gefriergerät",
+                "Kuehlschrank",
+                "Gefriergeraet",
                 "Mikrowelle",
-                "Kleingeräte"
+                "Kleingeraete"
             ],
             en: [
                 "Washing machine",
@@ -134,16 +134,16 @@
         reasons: {
             de: [
                 {
-                    title: "Verständliche Kommunikation",
-                    copy: "Kunden sehen sofort, wie sie FixWerk Berlin erreichen, welche Angaben hilfreich sind und wie die Anfrage weiterläuft."
+                    title: "Verstaendliche Kommunikation",
+                    copy: "Kunden sehen sofort, wie sie FixWerk Berlin erreichen, welche Angaben hilfreich sind und wie die Anfrage weiterlaeuft."
                 },
                 {
-                    title: "Seriöser erster Eindruck",
-                    copy: "Die Gestaltung wirkt hochwertig und lokal verankert, ohne übertrieben oder reisserisch zu sein."
+                    title: "Serioeser erster Eindruck",
+                    copy: "Die Gestaltung wirkt hochwertig und lokal verankert, ohne uebertrieben oder reisserisch zu sein."
                 },
                 {
-                    title: "Praktisch für den Alltag",
-                    copy: "Kurze Formulare, gut sichtbare CTAs und mobile Erreichbarkeit machen die Seite alltagstauglich für Berliner Haushalte."
+                    title: "Praktisch fuer den Alltag",
+                    copy: "Kurze Formulare, gut sichtbare CTAs und mobile Erreichbarkeit machen die Seite alltagstauglich fuer Berliner Haushalte."
                 }
             ],
             en: [
@@ -165,15 +165,15 @@
             de: [
                 {
                     title: "Anfrage senden",
-                    copy: "Sie nennen Gerät, Problem, Bezirk und eine mögliche Erreichbarkeit."
+                    copy: "Sie nennen Geraet, Problem, Bezirk und eine moegliche Erreichbarkeit."
                 },
                 {
-                    title: "Rückmeldung erhalten",
-                    copy: "FixWerk Berlin meldet sich zur Ersteinschätzung, mit Fragen zum Gerät oder zur Terminabstimmung."
+                    title: "Rueckmeldung erhalten",
+                    copy: "FixWerk Berlin meldet sich zur Ersteinschaetzung, mit Fragen zum Geraet oder zur Terminabstimmung."
                 },
                 {
-                    title: "Nächsten Schritt abstimmen",
-                    copy: "Je nach Fall folgt ein Vor-Ort-Termin, eine weitere Prüfung oder eine klare Empfehlung zum weiteren Vorgehen."
+                    title: "Naechsten Schritt abstimmen",
+                    copy: "Je nach Fall folgt ein Vor-Ort-Termin, eine weitere Pruefung oder eine klare Empfehlung zum weiteren Vorgehen."
                 }
             ],
             en: [
@@ -194,19 +194,19 @@
         testimonials: {
             de: [
                 {
-                    quote: "Schon auf den ersten Blick wirkt der Betrieb seriös und gut erreichbar. Genau so sucht man einen Reparaturservice in Berlin.",
+                    quote: "Schon auf den ersten Blick wirkt der Betrieb serioes und gut erreichbar. Genau so sucht man einen Reparaturservice in Berlin.",
                     author: "Maria S., Berlin-Mitte",
-                    role: "Beispielstimme für diese Präsentationsversion"
+                    role: "Beispielstimme fuer diese Praesentationsversion"
                 },
                 {
-                    quote: "Mir gefällt, dass sofort klar ist, welche Angaben sinnvoll sind und wie die Kontaktaufnahme weitergeht.",
+                    quote: "Mir gefaellt, dass sofort klar ist, welche Angaben sinnvoll sind und wie die Kontaktaufnahme weitergeht.",
                     author: "Jonas K., Berlin-Pankow",
-                    role: "Beispielstimme für diese Präsentationsversion"
+                    role: "Beispielstimme fuer diese Praesentationsversion"
                 },
                 {
-                    quote: "Die Seite fühlt sich deutlich hochwertiger an als typische lokale Reparaturseiten und bleibt trotzdem angenehm sachlich.",
+                    quote: "Die Seite fuehlt sich deutlich hochwertiger an als typische lokale Reparaturseiten und bleibt trotzdem angenehm sachlich.",
                     author: "Sabine R., Berlin-Charlottenburg",
-                    role: "Beispielstimme für diese Präsentationsversion"
+                    role: "Beispielstimme fuer diese Praesentationsversion"
                 }
             ],
             en: [
@@ -230,28 +230,28 @@
         faq: {
             de: [
                 {
-                    q: "Welche Reparaturen übernimmt FixWerk Berlin?",
-                    a: "Die Website ist aktuell auf Haushaltsgeräte und kleinere Reparaturen ausgerichtet, zum Beispiel Waschmaschinen, Geschirrspüler, Öfen, Kühlgeräte und ähnliche Alltagsgeräte."
+                    q: "Welche Reparaturen uebernimmt FixWerk Berlin?",
+                    a: "Die Website ist aktuell auf Haushaltsgeraete und kleinere Reparaturen ausgerichtet, zum Beispiel Waschmaschinen, Geschirrspueler, Oefen, Kuehlgeraete und aehnliche Alltagsgeraete."
                 },
                 {
                     q: "Bieten Sie Vor-Ort-Service in Berlin an?",
-                    a: "Ja, für viele Anfragen ist eine Vor-Ort-Prüfung in Berlin sinnvoll. Ob ein Einsatz direkt vor Ort oder ein anderer Ablauf passt, wird nach der ersten Schilderung abgestimmt."
+                    a: "Ja, fuer viele Anfragen ist eine Vor-Ort-Pruefung in Berlin sinnvoll. Ob ein Einsatz direkt vor Ort oder ein anderer Ablauf passt, wird nach der ersten Schilderung abgestimmt."
                 },
                 {
                     q: "Wie schnell kann ich eine Anfrage stellen?",
-                    a: "Telefon, E-Mail und Formular sind so aufgebaut, dass Sie Ihr Anliegen in wenigen Minuten übermitteln können."
+                    a: "Telefon, E-Mail und Formular sind so aufgebaut, dass Sie Ihr Anliegen in wenigen Minuten uebermitteln koennen."
                 },
                 {
-                    q: "Wird das Gerät vor einer Reparatur geprüft?",
-                    a: "Ja, vor einer Reparaturempfehlung geht es immer zuerst um eine nachvollziehbare Diagnose und eine realistische Einschätzung."
+                    q: "Wird das Geraet vor einer Reparatur geprueft?",
+                    a: "Ja, vor einer Reparaturempfehlung geht es immer zuerst um eine nachvollziehbare Diagnose und eine realistische Einschaetzung."
                 },
                 {
                     q: "Welche Informationen sollte ich mitsenden?",
-                    a: "Hilfreich sind Geräteart, Marke oder Modell, eine kurze Fehlerbeschreibung, Ihr Bezirk in Berlin und Zeiten für einen Rückruf."
+                    a: "Hilfreich sind Geraeteart, Marke oder Modell, eine kurze Fehlerbeschreibung, Ihr Bezirk in Berlin und Zeiten fuer einen Rueckruf."
                 },
                 {
                     q: "Welche Berliner Bezirke werden bedient?",
-                    a: "Der Fokus liegt auf vielen innerstädtischen und angrenzenden Bezirken in Berlin. Details zum Einsatzgebiet sind auf der Website aufgeführt."
+                    a: "Der Fokus liegt auf vielen innerstaedtischen und angrenzenden Bezirken in Berlin. Details zum Einsatzgebiet sind auf der Website aufgefuehrt."
                 }
             ],
             en: [
@@ -283,10 +283,10 @@
         },
         contactHighlights: {
             de: [
-                "Geräteart und kurze Fehlerbeschreibung",
+                "Geraeteart und kurze Fehlerbeschreibung",
                 "Bezirk oder Postleitzahl in Berlin",
                 "Marke oder Modell, falls bekannt",
-                "Wunschzeit für Rückruf oder Termin"
+                "Wunschzeit fuer Rueckruf oder Termin"
             ],
             en: [
                 "Appliance type and a short issue summary",
@@ -298,16 +298,16 @@
         premiumSignals: {
             de: [
                 {
-                    title: "Klare Anfrageführung",
-                    copy: "Die Seite führt Besucher ohne Suchaufwand zum passenden Kontaktweg."
+                    title: "Klare Anfragefuehrung",
+                    copy: "Die Seite fuehrt Besucher ohne Suchaufwand zum passenden Kontaktweg."
                 },
                 {
                     title: "Sichtbarer Berlin-Bezug",
-                    copy: "Standort, Bezirke und Servicebezug fühlen sich lokal und glaubwürdig an."
+                    copy: "Standort, Bezirke und Servicebezug fuehlen sich lokal und glaubwuerdig an."
                 },
                 {
                     title: "Ruhige Premium-Anmutung",
-                    copy: "Wertige Gestaltung und klare Sprache stärken das Vertrauen, ohne aufdringlich zu wirken."
+                    copy: "Wertige Gestaltung und klare Sprache staerken das Vertrauen, ohne aufdringlich zu wirken."
                 }
             ],
             en: [
@@ -328,16 +328,16 @@
         differentiators: {
             de: [
                 {
-                    title: "Für echte Haushaltsprobleme gedacht",
-                    copy: "Die Inhalte sprechen Kunden an, die schnell und verständlich Hilfe für ihren Alltag brauchen."
+                    title: "Fuer echte Haushaltsprobleme gedacht",
+                    copy: "Die Inhalte sprechen Kunden an, die schnell und verstaendlich Hilfe fuer ihren Alltag brauchen."
                 },
                 {
-                    title: "Seriös statt marktschreierisch",
+                    title: "Serioes statt marktschreierisch",
                     copy: "FixWerk Berlin wirkt professionell, lokal und erreichbar, ohne mit leeren Werbeversprechen zu arbeiten."
                 },
                 {
                     title: "Konsequent auf Kontakt ausgerichtet",
-                    copy: "Von Hero bis Footer unterstützt jede Sektion die Anfrage, den Anruf oder den nächsten Schritt."
+                    copy: "Von Hero bis Footer unterstuetzt jede Sektion die Anfrage, den Anruf oder den naechsten Schritt."
                 }
             ],
             en: [
@@ -356,16 +356,13 @@
             ]
         },
         coverage: {
-            de: "FixWerk Berlin ist in vielen zentralen Berliner Bezirken im Einsatz, darunter Mitte, Pankow, Friedrichshain, Kreuzberg, Charlottenburg, Schöneberg, Moabit und angrenzende Wohngebiete. So bleibt der Auftritt lokal, konkret und für Haushalte in Berlin sofort nachvollziehbar.",
-            en: "FixWerk Berlin is positioned for many central Berlin districts including Mitte, Pankow, Friedrichshain, Kreuzberg, Charlottenburg, Schöneberg, Moabit and nearby residential areas. This keeps the service footprint local, concrete and easy to understand."
+            de: "FixWerk Berlin ist in vielen zentralen Berliner Bezirken im Einsatz, darunter Mitte, Pankow, Friedrichshain, Kreuzberg, Charlottenburg, Schoeneberg, Moabit und angrenzende Wohngebiete. So bleibt der Auftritt lokal, konkret und fuer Haushalte in Berlin sofort nachvollziehbar.",
+            en: "FixWerk Berlin is positioned for many central Berlin districts including Mitte, Pankow, Friedrichshain, Kreuzberg, Charlottenburg, Schoeneberg, Moabit and nearby residential areas. This keeps the service footprint local, concrete and easy to understand."
         },
         legal: {
-            owner: "FixWerk Berlin, Demo-Präsentation",
+            owner: "FixWerk Berlin, Demo-Praesentation",
             representative: "Daniel Krause",
-            vatId: "wird mit den finalen Unternehmensdaten ergänzt"
+            vatId: "wird mit den finalen Unternehmensdaten ergaenzt"
         }
     };
 })();
-
-
-

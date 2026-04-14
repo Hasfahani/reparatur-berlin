@@ -1,13 +1,13 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Impressum | {{BUSINESS_NAME}}</title>
-    <meta name="description" content="Rechtliche Platzhalter für {{BUSINESS_NAME}}. Alle Pflichtangaben sind strukturiert vorbereitet und später schnell austauschbar.">
-    <link rel="canonical" href="https://www.{{DOMAIN}}/impressum.html">
-    <link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/impressum.html">
-    <link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/impressum-en.html">
+    <title>Impressum | FixWerk Berlin</title>
+    <meta name="description" content="Impressum der Präsentationswebsite von FixWerk Berlin mit realistisch aufbereiteten Demo-Daten für die Kundenpräsentation.">
+    <link rel="canonical" href="https://www.fixwerk-berlin.de/impressum.html">
+    <link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/impressum.html">
+    <link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/impressum-en.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-block">
-                <p class="brand-kicker" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</p>
-                <a class="site-brand" href="index.html" data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</a>
+                <p class="brand-kicker">Berlin Reparaturservice</p>
+                <a class="site-brand" href="index.html" data-token="BUSINESS_NAME">FixWerk Berlin</a>
             </div>
             <button class="menu-toggle" aria-label="Menü" aria-expanded="false">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -38,9 +38,9 @@
     <main id="main-content" class="page-main">
         <section class="section page-intro">
             <div class="container narrow-container">
-                <p class="eyebrow">Rechtliches</p>
-                <h1>Impressum als editierbare Grundstruktur.</h1>
-                <p class="lede">Diese Seite ist bewusst als sauber lesbare Platzhalter-Vorlage aufgebaut. Vor dem Livegang müssen alle Pflichtangaben mit den finalen Unternehmensdaten ersetzt und rechtlich geprüft werden.</p>
+                <p class="eyebrow">Impressum</p>
+                <h1>Anbieterkennzeichnung für die Präsentationswebsite.</h1>
+                <p class="lede">Die folgenden Angaben werden für die Demo-Präsentation von FixWerk Berlin verwendet. Vor dem Livegang werden die finalen Unternehmens- und Rechtsdaten an dieser Stelle eingesetzt.</p>
             </div>
         </section>
 
@@ -48,26 +48,26 @@
             <div class="container narrow-container legal-card">
                 <section>
                     <h2>Angaben gemäß § 5 TMG</h2>
-                    <p><span data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</span><br><span data-template="{{LEGAL_OWNER}}"></span><br><span data-template="{{ADDRESS_LINE_1}}"></span><br><span data-template="{{ADDRESS_LINE_2}}"></span><br><span data-template="{{POSTAL_CODE}} {{CITY}}"></span></p>
+                    <p><span data-token="BUSINESS_NAME">FixWerk Berlin</span><br><span data-template="{{LEGAL_OWNER}}">FixWerk Berlin, Demo-Präsentation</span><br><span data-template="{{ADDRESS_LINE_1}}">Invalidenstraße 120</span><br><span data-template="{{POSTAL_CODE}} {{CITY}}">10115 Berlin</span></p>
                 </section>
                 <section>
                     <h2>Kontakt</h2>
-                    <p>Telefon: <span data-phone-display>{{PHONE_NUMBER}}</span><br>E-Mail: <span data-email-display>{{EMAIL}}</span></p>
+                    <p>Telefon: <span data-phone-display>+49 30 12345678</span><br>E-Mail: <span data-email-display>kontakt@fixwerk-berlin.de</span></p>
                 </section>
                 <section>
                     <h2>Vertretungsberechtigte Person</h2>
-                    <p data-template="{{LEGAL_REPRESENTATIVE}}">{{LEGAL_REPRESENTATIVE}}</p>
+                    <p data-template="{{LEGAL_REPRESENTATIVE}}">Daniel Krause</p>
                 </section>
                 <section>
                     <h2>Umsatzsteuer-ID</h2>
-                    <p data-template="{{VAT_ID}}">{{VAT_ID}}</p>
+                    <p data-template="{{VAT_ID}}">wird mit den finalen Unternehmensdaten ergänzt</p>
                 </section>
                 <section>
-                    <h2>Wichtiger Hinweis</h2>
+                    <h2>Hinweis zur Präsentation</h2>
                     <ul class="legal-list">
-                        <li>Alle hier gezeigten Angaben sind Platzhalter.</li>
-                        <li>Ergänzen Sie vor dem Livegang die tatsächlichen Unternehmensdaten.</li>
-                        <li>Prüfen Sie Impressum, Datenschutz und Geschäftsmodell rechtlich für Ihren konkreten Betrieb.</li>
+                        <li>Diese Fassung dient als glaubwürdige Demo-Darstellung für die Kundenpräsentation.</li>
+                        <li>Name, Anschrift, Rechtsform und steuerliche Angaben werden vor der Veröffentlichung mit den finalen Daten aktualisiert.</li>
+                        <li>Die rechtliche Endfassung sollte vor dem Livegang geprüft werden.</li>
                     </ul>
                 </section>
             </div>
@@ -76,13 +76,27 @@
 
     <footer class="footer">
         <div class="container footer-inner">
-            <p class="footer-meta">&copy; <span data-current-year></span> <span data-token="BUSINESS_NAME">{{BUSINESS_NAME}}</span></p>
-            <nav aria-label="Footer Navigation">
-                <ul class="footer-nav">
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </nav>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="site-brand" href="index.html" data-token="BUSINESS_NAME">FixWerk Berlin</a>
+                    <p>Professioneller Reparaturservice für Haushaltsgeräte und kleinere Reparaturanfragen in Berlin.</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Invalidenstraße 120, 10115 Berlin</p>
+                    <p><a data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}" data-phone-display>+49 30 12345678</a></p>
+                    <p><a data-template-href="mailto:{{EMAIL}}" href="mailto:{{EMAIL}}" data-email-display>kontakt@fixwerk-berlin.de</a></p>
+                    <p>Mo–Fr 09:00-18:00, Sa 10:00-14:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-meta">&copy; <span data-current-year></span> <span data-token="BUSINESS_NAME">FixWerk Berlin</span></p>
+                <nav aria-label="Footer Navigation">
+                    <ul class="footer-nav">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
 
@@ -91,7 +105,7 @@
         <a class="button button-secondary" href="contact.html">Kontakt</a>
     </div>
 
-    <a class="whatsapp-float" data-template-href="https://wa.me/{{WHATSAPP_NUMBER}}" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener" data-template-aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}" aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}">
+    <a class="whatsapp-float" data-template-href="https://wa.me/{{WHATSAPP_NUMBER}}" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener" data-template-aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}" aria-label="WhatsApp-Kontakt für FixWerk Berlin">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667A13.24 13.24 0 0 0 2.76 15.907a13.16 13.16 0 0 0 1.768 6.612L2.667 29.333l7.026-1.842A13.22 13.22 0 0 0 16.004 29.2 13.27 13.27 0 1 0 16.004 2.667Zm0 24.27a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.17 1.094 1.113-4.066-.263-.418a10.96 10.96 0 0 1-1.684-5.853 11.01 11.01 0 1 1 11.004 11.017Zm6.037-8.245c-.33-.166-1.96-.967-2.264-1.078s-.525-.166-.745.166-.857 1.078-1.05 1.3-.387.25-.717.083a9.04 9.04 0 0 1-2.66-1.64 9.99 9.99 0 0 1-1.84-2.286c-.193-.33 0-.51.145-.674.13-.148.29-.387.437-.58a2 2 0 0 0 .29-.497.55.55 0 0 0-.024-.525c-.072-.166-.745-1.795-1.02-2.458s-.537-.558-.745-.568-.41-.012-.63-.012a1.21 1.21 0 0 0-.876.41 3.68 3.68 0 0 0-1.148 2.74 6.39 6.39 0 0 0 1.34 3.398 14.64 14.64 0 0 0 5.6 4.95 18 18 0 0 0 1.87.69 4.5 4.5 0 0 0 2.065.13 3.38 3.38 0 0 0 2.216-1.564 2.74 2.74 0 0 0 .192-1.564c-.072-.139-.263-.222-.554-.387Z"/></svg>
     </a>
 
@@ -99,3 +113,5 @@
     <script src="js/main.js" defer></script>
 </body>
 </html>
+
+

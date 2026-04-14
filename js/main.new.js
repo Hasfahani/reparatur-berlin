@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const cfg = window.SITE_CONFIG || {};
     const lang = (document.documentElement.lang || "de").toLowerCase();
     const isEN = lang.startsWith("en");
@@ -325,21 +325,21 @@ function validateField(field, isEN) {
     let message = "";
     if (field.hasAttribute("required")) {
         if (field.type === "checkbox" && !field.checked) {
-            message = isEN ? "Please confirm the privacy notice." : "Bitte bestätigen Sie den Datenschutzhinweis.";
+            message = isEN ? "Please confirm the privacy notice." : "Bitte bestaetigen Sie den Datenschutzhinweis.";
         } else if (!value) {
-            message = isEN ? "Please complete this field." : "Bitte füllen Sie dieses Feld aus.";
+            message = isEN ? "Please complete this field." : "Bitte fuellen Sie dieses Feld aus.";
         }
     }
     if (!message && field.type === "email" && value) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(value)) {
-            message = isEN ? "Please enter a valid email address." : "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+            message = isEN ? "Please enter a valid email address." : "Bitte geben Sie eine gueltige E-Mail-Adresse ein.";
         }
     }
     if (!message && field.type === "tel" && value) {
         const phonePattern = /^[0-9+\s()/.-]{6,}$/;
         if (!phonePattern.test(value)) {
-            message = isEN ? "Please enter a valid phone number." : "Bitte geben Sie eine gültige Telefonnummer ein.";
+            message = isEN ? "Please enter a valid phone number." : "Bitte geben Sie eine gueltige Telefonnummer ein.";
         }
     }
     if (message) {
@@ -379,10 +379,10 @@ function showFormSuccess(form, isEN) {
     form.hidden = true;
     success.hidden = false;
     success.classList.add("is-active");
-    success.querySelector("[data-success-heading]").textContent = isEN ? "Thank you for your enquiry" : "Vielen Dank für Ihre Anfrage";
+    success.querySelector("[data-success-heading]").textContent = isEN ? "Thank you for your enquiry" : "Vielen Dank fuer Ihre Anfrage";
     success.querySelector("[data-success-copy]").textContent = isEN
         ? "This presentation version does not send a real message yet, but the flow shows the intended customer experience for the live site."
-        : "In dieser Präsentationsversion wird noch keine echte Nachricht versendet. Der Ablauf zeigt jedoch bereits das vorgesehene Kundenerlebnis für die spätere Live-Seite.";
+        : "In dieser Praesentationsversion wird noch keine echte Nachricht versendet. Der Ablauf zeigt jedoch bereits das vorgesehene Kundenerlebnis fuer die spaetere Live-Seite.";
 }
 
 function escapeHtml(value) {
@@ -390,4 +390,3 @@ function escapeHtml(value) {
     div.textContent = value;
     return div.innerHTML;
 }
-
