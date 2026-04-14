@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de">
 <head>
     <meta charset="utf-8">
@@ -36,64 +36,35 @@
     </header>
 
     <main id="main-content" class="page-main">
-        <section class="section page-intro">
-            <div class="container narrow-container">
-                <p class="eyebrow">Kontaktseite</p>
-                <h1>Kontaktaufnahme, die schnell wirkt und professionell bleibt.</h1>
-                <p class="lede">Diese Seite ist nicht nur ein Formularcontainer, sondern ein klarer Conversion-Bereich für Anrufe, Rückrufwünsche, Terminabstimmungen und den späteren Anschluss an echte Prozesse.</p>
-                <div class="contact-hero-note">
-                    <strong>Ohne finale Marke trotzdem überzeugend</strong>
-                    <p>Die Struktur gibt Besuchern schon jetzt das Gefühl, mit einem professionell geführten Berliner Anbieter zu sprechen, nicht mit einer unfertigen Übergangslösung.</p>
+        <section class="hero section hero-premium">
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <p class="eyebrow">Kontakt & Anfrage</p>
+                    <h1>Der Kontakt fühlt sich an wie der nächste logische Schritt, nicht wie ein Seitenwechsel.</h1>
+                    <p class="lede">Diese Kontaktseite bleibt bewusst im selben Premium-Rhythmus wie die Startseite: klare Orientierung, sofort sichtbare Kontaktwege und ein Formular, das ruhig, professionell und vertrauenswürdig wirkt.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Jetzt anrufen</a>
+                        <a class="button button-secondary" href="#kontaktformular">Zum Formular</a>
+                    </div>
+                    <div class="hero-points">
+                        <div><span>1</span><p>Telefon, E-Mail und WhatsApp bleiben ohne Umwege erreichbar.</p></div>
+                        <div><span>2</span><p>Das Formular erklärt klar, was Besucher angeben sollen und was als Nächstes passiert.</p></div>
+                        <div><span>3</span><p>Die Seite wirkt weiter wie dieselbe hochwertige Marke, nicht wie eine reduzierte Unterseite.</p></div>
+                    </div>
+                    <div class="hero-proof-strip">
+                        <span>Klare Kontaktwege</span>
+                        <span>Schnelle Orientierung</span>
+                        <span>Mobile-first</span>
+                        <span>Vertrauensstark</span>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container contact-layout">
-                <div class="contact-grid">
-                    <article class="contact-card">
-                        <p class="eyebrow">Telefon</p>
-                        <h3>Schneller Erstkontakt</h3>
-                        <p><a data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}" data-phone-display>{{PHONE_NUMBER}}</a></p>
-                        <p class="field-note">Ideal für dringende Anfragen, schnelle Rückrufe und Besucher mit unmittelbarer Handlungsabsicht.</p>
-                    </article>
-                    <article class="contact-card">
-                        <p class="eyebrow">E-Mail</p>
-                        <h3>Sauber dokumentierte Anfrage</h3>
-                        <p><a data-template-href="mailto:{{EMAIL}}" href="mailto:{{EMAIL}}" data-email-display>{{EMAIL}}</a></p>
-                        <p class="field-note">Sinnvoll, wenn später CRM-, Helpdesk- oder Team-Prozesse angebunden werden.</p>
-                    </article>
-                    <article class="contact-card">
-                        <p class="eyebrow">Adresse</p>
-                        <h3>Rechtlich und lokal editierbar</h3>
-                        <address><span data-template="{{ADDRESS_LINE_1}}"></span><br><span data-template="{{ADDRESS_LINE_2}}"></span><br><span data-template="{{POSTAL_CODE}} {{CITY}}"></span></address>
-                        <p class="field-note">Nur Platzhalter, bis die finalen Standortdaten feststehen.</p>
-                    </article>
-                    <article class="contact-card">
-                        <p class="eyebrow">Servicezeiten</p>
-                        <h3>Ohne starre Annahmen</h3>
-                        <p data-template="{{OPENING_HOURS}}">{{OPENING_HOURS}}</p>
-                        <p class="field-note">Kann später auch für Notdienst-, Vor-Ort- oder Werkstattzeiten angepasst werden.</p>
-                    </article>
-                    <article class="contact-card">
-                        <p class="eyebrow">Hinweise</p>
-                        <h3>Was Interessenten mitschicken sollten</h3>
-                        <ul class="contact-highlights" data-section="contact-highlights"></ul>
-                    </article>
-                    <article class="contact-card contact-card-accent">
-                        <p class="eyebrow">Vertrauen</p>
-                        <h3>Klare Erwartung statt unklarer Kontaktstrecke</h3>
-                        <p>Die Seite zeigt bewusst sofort, wie Interessenten Kontakt aufnehmen, welche Angaben hilfreich sind und wie der nächste Schritt aussieht.</p>
-                    </article>
-                </div>
-
-                <aside class="hero-panel">
+                <aside class="hero-panel" id="kontaktformular">
                     <p class="eyebrow">Anfrageformular</p>
                     <h2>Sauber strukturiertes Formular für Leads aus Berlin.</h2>
                     <p class="form-note">Der aktuelle Stand ist als hochwertige Frontend-Vorlage einsatzbereit. Die finale Verarbeitung können Sie später an E-Mail, CRM oder ein Buchungssystem anbinden.</p>
                     <div class="contact-assurance">
-                        <strong>Warum dieses Formular besser konvertiert</strong>
-                        <p>Wenige Felder, klare Sprache, nachvollziehbare Datenschutzkommunikation und ein sichtbarer nächster Schritt.</p>
+                        <strong>Warum dieses Formular besser wirkt</strong>
+                        <p>Wenige Felder, klare Sprache, nachvollziehbare Datenschutzhinweise und ein sichtbarer nächster Schritt.</p>
                     </div>
                     <form class="site-form" data-form-mode="demo">
                         <div class="form-row">
@@ -132,6 +103,61 @@
                 </aside>
             </div>
         </section>
+
+        <section class="trust-strip">
+            <div class="container trust-grid" data-section="trust"></div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-layout">
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <p class="eyebrow">Telefon</p>
+                        <h3>Schneller Erstkontakt</h3>
+                        <p><a data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}" data-phone-display>{{PHONE_NUMBER}}</a></p>
+                        <p class="field-note">Ideal für dringende Anfragen, schnelle Rückrufe und Besucher mit unmittelbarer Handlungsabsicht.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">E-Mail</p>
+                        <h3>Sauber dokumentierte Anfrage</h3>
+                        <p><a data-template-href="mailto:{{EMAIL}}" href="mailto:{{EMAIL}}" data-email-display>{{EMAIL}}</a></p>
+                        <p class="field-note">Sinnvoll, wenn später CRM-, Helpdesk- oder Team-Prozesse angebunden werden.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Adresse</p>
+                        <h3>Rechtlich und lokal editierbar</h3>
+                        <address><span data-template="{{ADDRESS_LINE_1}}"></span><br><span data-template="{{ADDRESS_LINE_2}}"></span><br><span data-template="{{POSTAL_CODE}} {{CITY}}"></span></address>
+                        <p class="field-note">Nur Platzhalter, bis die finalen Standortdaten feststehen.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Servicezeiten</p>
+                        <h3>Ohne starre Annahmen</h3>
+                        <p data-template="{{OPENING_HOURS}}">{{OPENING_HOURS}}</p>
+                        <p class="field-note">Kann später auch für Notdienst-, Vor-Ort- oder Werkstattzeiten angepasst werden.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Hinweise</p>
+                        <h3>Was Interessenten mitschicken sollten</h3>
+                        <ul class="contact-highlights" data-section="contact-highlights"></ul>
+                    </article>
+                    <article class="contact-card contact-card-accent">
+                        <p class="eyebrow">Transparenz</p>
+                        <h3>Klare Erwartung statt unklarer Kontaktstrecke</h3>
+                        <p>Die Seite zeigt sofort, wie Interessenten Kontakt aufnehmen, welche Angaben hilfreich sind und wie der nächste Schritt aussieht.</p>
+                    </article>
+                </div>
+
+                <aside class="hero-panel">
+                    <p class="eyebrow">Warum das Vertrauen schafft</p>
+                    <h2>Die Kontaktseite nimmt nichts weg. Sie macht den Weg nur kürzer.</h2>
+                    <p class="form-note">Statt Gestaltung, Orientierung und Vertrauenssignale zu reduzieren, verdichtet diese Seite alles auf das Wesentliche. So bleibt der Wechsel von der Startseite zur Anfrage natürlich und hochwertig.</p>
+                    <div class="contact-hero-note">
+                        <strong>Wichtig für die Präsentation</strong>
+                        <p>Die Seite behält dieselbe visuelle Sprache, dieselbe Ruhe und dieselbe Wertigkeit bei. Genau dadurch wirkt sie geschlossen und professionell.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -148,7 +174,7 @@
 
     <div class="mobile-cta">
         <a class="button button-primary" data-template-href="tel:{{PHONE_NUMBER}}" href="tel:{{PHONE_NUMBER}}">Anrufen</a>
-        <a class="button button-secondary" href="#main-content">Formular</a>
+        <a class="button button-secondary" href="#kontaktformular">Formular</a>
     </div>
 
     <a class="whatsapp-float" data-template-href="https://wa.me/{{WHATSAPP_NUMBER}}" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener" data-template-aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}" aria-label="WhatsApp-Kontakt für {{BUSINESS_NAME}}">
