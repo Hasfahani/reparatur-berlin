@@ -74,38 +74,56 @@
         services: {
             de: [
                 {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><circle cx="12" cy="13" r="4"/><circle cx="8" cy="6" r="0.75" fill="currentColor" stroke="none"/><circle cx="11" cy="6" r="0.75" fill="currentColor" stroke="none"/></svg>',
                     title: "Waschmaschinen-Reparatur",
                     copy: "Wenn die Maschine nicht mehr abpumpt, schleudert oder Wasser verliert, helfen wir mit einer klaren Ersteinschätzung und einem planbaren nächsten Schritt."
                 },
                 {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="3" y1="7" x2="21" y2="7"/><path d="M8 12v5M12 11v6M16 12v5"/><path d="M6 4.5h3"/></svg>',
                     title: "Geschirrspüler-Reparatur",
                     copy: "Bei störenden Fehlermeldungen, schlechtem Reinigungsergebnis oder Undichtigkeiten prüfen wir, ob eine sinnvolle Reparatur möglich ist."
                 },
                 {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="9" y1="13" x2="9" y2="17"/></svg>',
+                    title: "Kühlschrank & Gefriergerät",
+                    copy: "Kühlt nicht mehr richtig, bildet Eis oder läuft aus? Wir prüfen Kühlschränke und Gefriergeräte und geben eine ehrliche Einschätzung zu Reparatur und Kosten."
+                },
+                {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="5" y="12" width="14" height="7" rx="1"/><circle cx="8" cy="7" r="2"/><circle cx="16" cy="7" r="2"/></svg>',
                     title: "Backofen- und Herdservice",
                     copy: "Ob fehlende Hitze, ungleichmäßiges Backen oder ausfallende Kochfelder: wir sorgen für Orientierung und eine saubere Reparaturentscheidung."
                 },
                 {
-                    title: "Kühlgeräte und Kleingeräte",
-                    copy: "Auch bei Kühlschränken, Mikrowellen oder kleineren Haushaltsgeräten erhalten Sie eine verständliche Rückmeldung und einen passenden Serviceweg."
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>',
+                    title: "Kleingeräte-Reparatur",
+                    copy: "Auch Mikrowellen, Wasserkocher, Kaffeemaschinen und andere Haushaltskleingeräte werden geprüft und wenn möglich fachgerecht repariert."
                 }
             ],
             en: [
                 {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><circle cx="12" cy="13" r="4"/><circle cx="8" cy="6" r="0.75" fill="currentColor" stroke="none"/><circle cx="11" cy="6" r="0.75" fill="currentColor" stroke="none"/></svg>',
                     title: "Washing machine repair",
                     copy: "If the machine will not drain, spin or stay watertight, we help with a practical first assessment and a clear next step."
                 },
                 {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="3" y1="7" x2="21" y2="7"/><path d="M8 12v5M12 11v6M16 12v5"/><path d="M6 4.5h3"/></svg>',
                     title: "Dishwasher repair",
                     copy: "For recurring error messages, weak cleaning results or leaks, we review whether a repair is sensible and how to proceed."
                 },
                 {
-                    title: "Oven and cooker service",
-                    copy: "From heating issues to uneven baking or faulty hob zones, the goal is a realistic diagnosis and a clean repair path."
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="9" y1="13" x2="9" y2="17"/></svg>',
+                    title: "Fridge & freezer repair",
+                    copy: "Not cooling properly, icing over or leaking water? We assess the fault and give you an honest answer on repairability and cost."
                 },
                 {
-                    title: "Cooling and small appliances",
-                    copy: "Refrigerators, microwaves and smaller household appliances can also be reviewed with the same clear and practical service approach."
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="5" y="12" width="14" height="7" rx="1"/><circle cx="8" cy="7" r="2"/><circle cx="16" cy="7" r="2"/></svg>',
+                    title: "Oven & stove repair",
+                    copy: "From heating issues to uneven baking or faulty hob zones, the goal is a realistic diagnosis and a clear repair path."
+                },
+                {
+                    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>',
+                    title: "Small appliances",
+                    copy: "Microwaves, kettles, coffee machines and other household appliances — checked and repaired where possible with the same straightforward service."
                 }
             ]
         },

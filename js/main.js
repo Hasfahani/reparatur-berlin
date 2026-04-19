@@ -23,6 +23,7 @@
     setupMobileMenu();
     setupRevealObserver();
     setupForms(isEN);
+    renderCookieBanner(isEN);
 });
 
 function applyTheme(cfg) {
@@ -152,7 +153,15 @@ function renderServices(cfg, isEN) {
     const items = isEN ? cfg.services.en : cfg.services.de;
     const container = document.querySelector('[data-section="services"]');
     if (!container || !items) return;
-    container.innerHTML = items.map((item, index) => ['<article class="feature-card reveal reveal-delay-' + Math.min(index, 3) + '">', '<div class="card-index">0' + (index + 1) + '</div>', '<h3>' + escapeHtml(item.title) + '</h3>', '<p>' + escapeHtml(item.copy) + '</p>', '</article>'].join("")).join("");
+    container.innerHTML = items.map((item, index) => [
+        '<article class="feature-card reveal reveal-delay-' + Math.min(index, 3) + '">',
+        item.icon
+            ? '<div class="feature-icon" aria-hidden="true">' + item.icon + '</div>'
+            : '<div class="card-index">0' + (index + 1) + '</div>',
+        '<h3>' + escapeHtml(item.title) + '</h3>',
+        '<p>' + escapeHtml(item.copy) + '</p>',
+        '</article>'
+    ].join("")).join("");
 }
 
 function renderDeviceGroups(cfg, isEN) {
@@ -381,8 +390,28 @@ function showFormSuccess(form, isEN) {
     success.classList.add("is-active");
     success.querySelector("[data-success-heading]").textContent = isEN ? "Thank you for your enquiry" : "Vielen Dank für Ihre Anfrage";
     success.querySelector("[data-success-copy]").textContent = isEN
-        ? "This presentation version does not send a real message yet, but the flow shows the intended customer experience for the live site."
-        : "In dieser Präsentationsversion wird noch keine echte Nachricht versendet. Der Ablauf zeigt jedoch bereits das vorgesehene Kundenerlebnis für die spätere Live-Seite.";
+        ? "Thanks for your message. We will be in touch shortly."
+        : "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen.";
+}
+
+function renderCookieBanner(isEN) {
+    if (localStorage.getItem("cookie-consent")) return;
+    const banner = document.createElement("div");
+    banner.id = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", isEN ? "Cookie consent" : "Cookie-Einwilligung");
+    if (isEN) {
+        banner.innerHTML = '<p>We use cookies to improve your experience. <a href="privacy-en.html">Privacy policy</a></p><div class="cookie-actions"><button id="cookie-accept">Accept</button><button id="cookie-reject">Reject</button></div>';
+    } else {
+        banner.innerHTML = '<p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href="datenschutz.html">Datenschutz</a></p><div class="cookie-actions"><button id="cookie-accept">Akzeptieren</button><button id="cookie-reject">Ablehnen</button></div>';
+    }
+    document.body.appendChild(banner);
+    function dismiss(choice) {
+        localStorage.setItem("cookie-consent", choice);
+        banner.remove();
+    }
+    document.getElementById("cookie-accept").addEventListener("click", function () { dismiss("accepted"); });
+    document.getElementById("cookie-reject").addEventListener("click", function () { dismiss("rejected"); });
 }
 
 function escapeHtml(value) {
