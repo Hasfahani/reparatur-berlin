@@ -1,23 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.{{DOMAIN}}/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/index-en.html"/>
+    <loc>https://www.fixwerk-berlin.de/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/index-en.html"/>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.{{DOMAIN}}/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/contact-en.html"/>
+    <loc>https://www.fixwerk-berlin.de/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/contact-en.html"/>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.{{DOMAIN}}/impressum.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/impressum.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/impressum-en.html"/>
+    <loc>https://www.fixwerk-berlin.de/waschmaschinen-reparatur.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/waschmaschinen-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/washing-machine-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.{{DOMAIN}}/datenschutz.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.{{DOMAIN}}/datenschutz.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.{{DOMAIN}}/privacy-en.html"/>
+    <loc>https://www.fixwerk-berlin.de/washing-machine-repair.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/waschmaschinen-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/washing-machine-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/geschirrspueler-reparatur.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/geschirrspueler-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/dishwasher-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/dishwasher-repair.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/geschirrspueler-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/dishwasher-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/kuehlschrank-reparatur.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/kuehlschrank-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/fridge-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/fridge-repair.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/kuehlschrank-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/fridge-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/backofen-reparatur.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/backofen-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/oven-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/oven-repair.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/backofen-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/oven-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/kleingeraete-reparatur.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/kleingeraete-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/small-appliance-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/small-appliance-repair.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/kleingeraete-reparatur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/small-appliance-repair.html"/>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/impressum-en.html"/>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.fixwerk-berlin.de/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.fixwerk-berlin.de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fixwerk-berlin.de/privacy-en.html"/>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>

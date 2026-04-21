@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const cfg = window.SITE_CONFIG || {};
     const lang = (document.documentElement.lang || "de").toLowerCase();
     const isEN = lang.startsWith("en");
@@ -8,6 +8,7 @@
     renderMetrics(cfg, isEN);
     renderTrustBadges(cfg, isEN);
     renderServices(cfg, isEN);
+    renderBrands(cfg);
     renderDeviceGroups(cfg, isEN);
     renderReasons(cfg, isEN);
     renderPremiumSignals(cfg, isEN);
@@ -153,15 +154,31 @@ function renderServices(cfg, isEN) {
     const items = isEN ? cfg.services.en : cfg.services.de;
     const container = document.querySelector('[data-section="services"]');
     if (!container || !items) return;
-    container.innerHTML = items.map((item, index) => [
-        '<article class="feature-card reveal reveal-delay-' + Math.min(index, 3) + '">',
-        item.icon
-            ? '<div class="feature-icon" aria-hidden="true">' + item.icon + '</div>'
-            : '<div class="card-index">0' + (index + 1) + '</div>',
-        '<h3>' + escapeHtml(item.title) + '</h3>',
-        '<p>' + escapeHtml(item.copy) + '</p>',
-        '</article>'
-    ].join("")).join("");
+    container.innerHTML = items.map((item, index) => {
+        const problemsHtml = item.problems && item.problems.length
+            ? '<ul class="service-problems">' + item.problems.map((p) => '<li>' + escapeHtml(p) + '</li>').join("") + '</ul>'
+            : "";
+        const linkHtml = item.slug
+            ? '<a class="service-link" href="' + escapeHtml(item.slug) + '.html">' + (isEN ? "Learn more" : "Mehr erfahren") + ' <span aria-hidden="true">→</span></a>'
+            : "";
+        return [
+            '<article class="feature-card reveal reveal-delay-' + Math.min(index, 3) + '">',
+            item.icon
+                ? '<div class="feature-icon" aria-hidden="true">' + item.icon + '</div>'
+                : '<div class="card-index">0' + (index + 1) + '</div>',
+            '<h3>' + escapeHtml(item.title) + '</h3>',
+            '<p>' + escapeHtml(item.copy) + '</p>',
+            problemsHtml,
+            linkHtml,
+            '</article>'
+        ].join("");
+    }).join("");
+}
+
+function renderBrands(cfg) {
+    const container = document.querySelector('[data-section="brands"]');
+    if (!container || !cfg.brands || !cfg.brands.length) return;
+    container.innerHTML = cfg.brands.map((brand) => '<li class="brand-item">' + escapeHtml(brand) + '</li>').join("");
 }
 
 function renderDeviceGroups(cfg, isEN) {
@@ -280,15 +297,32 @@ function setupMobileMenu() {
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".site-nav");
     if (!toggle || !nav) return;
+
     toggle.addEventListener("click", () => {
         const isOpen = nav.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", String(isOpen));
     });
+
     nav.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
             nav.classList.remove("is-open");
             toggle.setAttribute("aria-expanded", "false");
         });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (nav.classList.contains("is-open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && nav.classList.contains("is-open")) {
+            nav.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.focus();
+        }
     });
 }
 
@@ -301,7 +335,7 @@ function setupRevealObserver() {
             entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
     items.forEach((item) => observer.observe(item));
 }
 
@@ -388,8 +422,10 @@ function showFormSuccess(form, isEN) {
     form.hidden = true;
     success.hidden = false;
     success.classList.add("is-active");
-    success.querySelector("[data-success-heading]").textContent = isEN ? "Thank you for your enquiry" : "Vielen Dank für Ihre Anfrage";
-    success.querySelector("[data-success-copy]").textContent = isEN
+    const heading = success.querySelector("[data-success-heading]");
+    const copy = success.querySelector("[data-success-copy]");
+    if (heading) heading.textContent = isEN ? "Thank you for your enquiry" : "Vielen Dank für Ihre Anfrage";
+    if (copy) copy.textContent = isEN
         ? "Thanks for your message. We will be in touch shortly."
         : "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen.";
 }
@@ -419,4 +455,3 @@ function escapeHtml(value) {
     div.textContent = value;
     return div.innerHTML;
 }
-
